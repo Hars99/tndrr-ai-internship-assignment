@@ -1,0 +1,180 @@
+{"split":"train","text":"Could I reserve a practice interview for Wednesday after lunch?","label":"schedule_interview"}
+{"split":"train","text":"My practical exam clashes with the mock. Could it be later that afternoon?","label":"reschedule_interview"}
+{"split":"train","text":"Please cancel the practice interview I booked for tonight.","label":"cancel_interview"}
+{"split":"train","text":"Could you look up which date my practice interview falls on?","label":"check_schedule"}
+{"split":"train","text":"Can you tell me how I handled the introduction in today's mock?","label":"request_feedback"}
+{"split":"train","text":"Can you teach me how to solve a basic SQL join before my mock?","label":"out_of_scope"}
+{"split":"train","text":"Please arrange a mock for me before campus placements begin.","label":"schedule_interview"}
+{"split":"train","text":"Move the session I reserved yesterday to next Wednesday.","label":"reschedule_interview"}
+{"split":"train","text":"Can you take my name off the interviewer’s list?","label":"cancel_interview"}
+{"split":"train","text":"Is the mock I selected showing as confirmed?","label":"check_schedule"}
+{"split":"train","text":"I'd like the interviewer's notes from the practice session I finished.","label":"request_feedback"}
+{"split":"train","text":"What should I wear to a company interview?","label":"out_of_scope"}
+{"split":"train","text":"I'd like to grab an available mock slot this weekend.","label":"schedule_interview"}
+{"split":"train","text":"I already have a slot at noon. Could we bump it to 3 pm?","label":"reschedule_interview"}
+{"split":"train","text":"I won't be doing the mock anymore. Release my slot.","label":"cancel_interview"}
+{"split":"train","text":"I can't find the email. Can you tell me when my booked mock starts?","label":"check_schedule"}
+{"split":"train","text":"What did my evaluator think of my answers in the technical round?","label":"request_feedback"}
+{"split":"train","text":"Help me write a cover letter for a backend role.","label":"out_of_scope"}
+{"split":"train","text":"Is there space to fit me in for a practice round tomorrow?","label":"schedule_interview"}
+{"split":"train","text":"Could the mock on my calendar happen a day earlier?","label":"reschedule_interview"}
+{"split":"train","text":"Please withdraw me from the technical mock on the 8th.","label":"cancel_interview"}
+{"split":"train","text":"Where can I see the date attached to my reservation?","label":"check_schedule"}
+{"split":"train","text":"Please show me the feedback from the mock I completed yesterday.","label":"request_feedback"}
+{"split":"train","text":"Can you reset my password for the student portal?","label":"out_of_scope"}
+{"split":"train","text":"Sign me up for the next virtual mock interview.","label":"schedule_interview"}
+{"split":"train","text":"Can I swap my Saturday mock slot for the Sunday one?","label":"reschedule_interview"}
+{"split":"train","text":"I'd like to drop my practice interview booking entirely.","label":"cancel_interview"}
+{"split":"train","text":"Could you verify that my interview registration went through?","label":"check_schedule"}
+{"split":"train","text":"How did I score on communication in my last practice interview?","label":"request_feedback"}
+{"split":"train","text":"What does the job description mean by distributed systems?","label":"out_of_scope"}
+{"split":"train","text":"I haven't booked anything yet. Can I take the 2 pm slot?","label":"schedule_interview"}
+{"split":"train","text":"The call is booked for 9 am, but 10:30 would work better.","label":"reschedule_interview"}
+{"split":"train","text":"Remove the mock session from my account, please.","label":"cancel_interview"}
+{"split":"train","text":"Am I still signed up for the practice round on Saturday?","label":"check_schedule"}
+{"split":"train","text":"Did my problem-solving explanation make sense during the mock?","label":"request_feedback"}
+{"split":"train","text":"Can you suggest a project idea for my portfolio?","label":"out_of_scope"}
+{"split":"train","text":"Put me down for a technical mock on the 12th.","label":"schedule_interview"}
+{"split":"train","text":"The slot you gave me overlaps with a lecture. Shift it to Thursday please.","label":"reschedule_interview"}
+{"split":"train","text":"I booked two sessions by mistake. Delete the extra one at noon.","label":"cancel_interview"}
+{"split":"train","text":"Is my mock session at 10 or at 11?","label":"check_schedule"}
+{"split":"train","text":"Could I get a review of my answers from this afternoon's trial interview?","label":"request_feedback"}
+{"split":"train","text":"Could you send me an attendance certificate?","label":"out_of_scope"}
+{"split":"train","text":"Can someone set up a practice HR round for me?","label":"schedule_interview"}
+{"split":"train","text":"Can we postpone the mock I've confirmed until after my exams?","label":"reschedule_interview"}
+{"split":"train","text":"Can you free up my reserved slot for somebody else?","label":"cancel_interview"}
+{"split":"train","text":"Can you tell if I have a mock booking on my account?","label":"check_schedule"}
+{"split":"train","text":"I'd like to know where I lost marks in the mock I just finished.","label":"request_feedback"}
+{"split":"train","text":"I need a list of employers offering summer internships.","label":"out_of_scope"}
+{"split":"train","text":"I'd like to use one of my credits on an interview this month.","label":"schedule_interview"}
+{"split":"train","text":"I'd prefer a morning slot for my existing practice interview.","label":"reschedule_interview"}
+{"split":"train","text":"A family matter came up and I need to call off my mock.","label":"cancel_interview"}
+{"split":"train","text":"What is the start time in IST for the session I reserved?","label":"check_schedule"}
+{"split":"train","text":"Can you share the scorecard for the practice round I completed?","label":"request_feedback"}
+{"split":"train","text":"Can you write Python code for merge sort?","label":"out_of_scope"}
+{"split":"train","text":"May I reserve the opening shown for Thursday morning?","label":"schedule_interview"}
+{"split":"train","text":"My bus is running late. Can we start today's mock half an hour later?","label":"reschedule_interview"}
+{"split":"train","text":"I signed up for Monday's practice round. Please undo that booking.","label":"cancel_interview"}
+{"split":"train","text":"I forgot the day I picked for my interview. Could you look it up?","label":"check_schedule"}
+{"split":"train","text":"What were the main issues with my responses in that interview simulation?","label":"request_feedback"}
+{"split":"train","text":"How should I approach the salary discussion with a recruiter?","label":"out_of_scope"}
+{"split":"train","text":"I've never used the interview feature. Could you arrange a session?","label":"schedule_interview"}
+{"split":"train","text":"Please change my confirmed slot from this week to next week.","label":"reschedule_interview"}
+{"split":"train","text":"I accepted an offer, so you can clear my remaining mock reservation.","label":"cancel_interview"}
+{"split":"train","text":"Which slot did the coordinator assign me for the mock?","label":"check_schedule"}
+{"split":"train","text":"Could someone point out what I did well in the mock earlier today?","label":"request_feedback"}
+{"split":"train","text":"Find me a bus that goes to our campus tomorrow.","label":"out_of_scope"}
+{"split":"train","text":"Can you add me to the list for a mock this evening?","label":"schedule_interview"}
+{"split":"train","text":"I need to bring the appointment forward before my internship starts.","label":"reschedule_interview"}
+{"split":"train","text":"Please drop the interview currently marked confirmed in my dashboard.","label":"cancel_interview"}
+{"split":"train","text":"Could you confirm the date and time in my booking?","label":"check_schedule"}
+{"split":"train","text":"I finished the practice call and would like comments on my delivery.","label":"request_feedback"}
+{"split":"train","text":"What's a good answer to tell me about yourself?","label":"out_of_scope"}
+{"split":"train","text":"Book whichever practice interview slot is still free on Saturday.","label":"schedule_interview"}
+{"split":"train","text":"Switch my interview booking from the early slot to the late one.","label":"reschedule_interview"}
+{"split":"train","text":"I need to opt out of tomorrow's scheduled practice session.","label":"cancel_interview"}
+{"split":"train","text":"Has my practice interview reservation been accepted?","label":"check_schedule"}
+{"split":"train","text":"What did the mentor flag in my answers during yesterday's practice interview?","label":"request_feedback"}
+{"split":"train","text":"Does the interview platform support screen readers?","label":"out_of_scope"}
+{"split":"train","text":"The booking page is down. Please reserve a mock slot for me.","label":"schedule_interview"}
+{"split":"train","text":"Friday's practice session is already on the calendar. Can you find me another time?","label":"reschedule_interview"}
+{"split":"train","text":"Take me off the roster for my mock next week, please.","label":"cancel_interview"}
+{"split":"train","text":"Is the mock in my dashboard happening in the morning or afternoon?","label":"check_schedule"}
+{"split":"train","text":"Did I spend too long or too little on the case question in the mock?","label":"request_feedback"}
+{"split":"train","text":"Can you show me how to update my profile picture?","label":"out_of_scope"}
+{"split":"train","text":"I need to practise answering questions aloud. Can you set up a mock?","label":"schedule_interview"}
+{"split":"train","text":"The interviewer and I agreed on 4 pm. Could we start at 5 instead?","label":"reschedule_interview"}
+{"split":"train","text":"Can you void the reservation I made this morning?","label":"cancel_interview"}
+{"split":"train","text":"What day of the week is the appointment I made?","label":"check_schedule"}
+{"split":"train","text":"Can I see how the coach rated my technical mock performance?","label":"request_feedback"}
+{"split":"train","text":"Which laptop should I buy for first-year engineering?","label":"out_of_scope"}
+{"split":"train","text":"Could you set me up with an interviewer for next Tuesday?","label":"schedule_interview"}
+{"split":"train","text":"I clicked the wrong date when reserving my mock. Please change it to the 15th.","label":"reschedule_interview"}
+{"split":"train","text":"I'm leaving the placement program. Please close my open interview booking.","label":"cancel_interview"}
+{"split":"train","text":"Could I check whether the practice session is still on?","label":"check_schedule"}
+{"split":"train","text":"Please send an assessment of the HR practice round I attended.","label":"request_feedback"}
+{"split":"train","text":"How many credits does the placement course cost?","label":"out_of_scope"}
+{"split":"train","text":"The 11 am mock slot works for me. I'd like to claim it.","label":"schedule_interview"}
+{"split":"train","text":"Could we push the mock interview I have tomorrow to later this month?","label":"reschedule_interview"}
+{"split":"train","text":"I can't attend the training anymore. Give up my mock slot.","label":"cancel_interview"}
+{"split":"train","text":"I submitted the booking form yesterday. What status does it show?","label":"check_schedule"}
+{"split":"train","text":"I'd like a written review of the interview I completed last night.","label":"request_feedback"}
+{"split":"train","text":"My microphone is too quiet. Can you help me fix the settings?","label":"out_of_scope"}
+{"split":"train","text":"I'd like a slot for a behavioural mock before the hiring fair.","label":"schedule_interview"}
+{"split":"train","text":"Can I trade my current slot for one outside college hours?","label":"reschedule_interview"}
+{"split":"train","text":"I pressed reserve accidentally. Could you undo it?","label":"cancel_interview"}
+{"split":"train","text":"Do I need to be online at 2 or 2:30 for my mock?","label":"check_schedule"}
+{"split":"train","text":"What did the panel say about the example I gave in the mock?","label":"request_feedback"}
+{"split":"train","text":"Can you recommend some practice problems on arrays?","label":"out_of_scope"}
+{"split":"train","text":"Can the placement team assign me a new practice interview?","label":"schedule_interview"}
+{"split":"train","text":"The existing booking works on the same date if it starts at noon.","label":"reschedule_interview"}
+{"split":"train","text":"The Friday interview is no longer needed. Please dismiss the booking.","label":"cancel_interview"}
+{"split":"train","text":"Have they confirmed my interview slot in the portal?","label":"check_schedule"}
+{"split":"train","text":"Could you let me know how my closing answer came across?","label":"request_feedback"}
+{"split":"train","text":"Is there a quiet room on campus where I can study?","label":"out_of_scope"}
+{"split":"train","text":"I'd like to sit a trial interview while I have a break on Friday.","label":"schedule_interview"}
+{"split":"train","text":"Please move my registered mock session to the first slot after lunch.","label":"reschedule_interview"}
+{"split":"train","text":"I'd like my upcoming mock interview reservation removed.","label":"cancel_interview"}
+{"split":"train","text":"Can you pull up the schedule for the mock interview I'm registered for?","label":"check_schedule"}
+{"split":"train","text":"The practice interview ended a few minutes ago. Can I see the results?","label":"request_feedback"}
+{"split":"train","text":"I'd like to join the department group discussion club.","label":"out_of_scope"}
+{"split":"test","text":"There's an opening with the alumni mentor at noon. Can you put my name on it?","label":"schedule_interview"}
+{"split":"test","text":"The person running my mock is on leave when I'm booked. Please find a replacement time.","label":"reschedule_interview"}
+{"split":"test","text":"I registered for the English mock twice. Could you keep one entry and remove the duplicate?","label":"cancel_interview"}
+{"split":"test","text":"Did the system save my reservation when the network dropped?","label":"check_schedule"}
+{"split":"test","text":"I rambled on the teamwork question. How did that affect the result of the mock?","label":"request_feedback"}
+{"split":"test","text":"Can you draft a short thank-you message to the recruiter who interviewed me?","label":"out_of_scope"}
+{"split":"test","text":"I couldn't attend the last cycle and want to register for the new mock round.","label":"schedule_interview"}
+{"split":"test","text":"I have a train at the same time as the practice call. Could the call happen after I arrive?","label":"reschedule_interview"}
+{"split":"test","text":"I've changed my mind about doing a trial interview. Please give my place to the waitlist.","label":"cancel_interview"}
+{"split":"test","text":"The calendar says 17:00 GMT. What time should I join locally for the session I'm booked into?","label":"check_schedule"}
+{"split":"test","text":"Were my answers too fast for the assessor during our trial run?","label":"request_feedback"}
+{"split":"test","text":"Could you explain what the reschedule button does without changing my booking?","label":"out_of_scope"}
+{"split":"test","text":"Can I get on an interviewer's calendar for a trial round sometime this week?","label":"schedule_interview"}
+{"split":"test","text":"I accepted the calendar invite, then the college changed our viva time. Any chance of moving my interview?","label":"reschedule_interview"}
+{"split":"test","text":"I stopped the course this week. Can you clear the practice interview on my calendar?","label":"cancel_interview"}
+{"split":"test","text":"How late is the booked mock expected to finish?","label":"check_schedule"}
+{"split":"test","text":"My simulated interview is complete. Where do I find the rubric breakdown?","label":"request_feedback"}
+{"split":"test","text":"Please remove my old phone number from the application form.","label":"out_of_scope"}
+{"split":"test","text":"I have half an hour free during the lunch break. Can you get me a mock round in that window?","label":"schedule_interview"}
+{"split":"test","text":"Can we keep the mock and do it two days from now instead?","label":"reschedule_interview"}
+{"split":"test","text":"Please unbook the session under my name for 6:30 tonight.","label":"cancel_interview"}
+{"split":"test","text":"I have two entries in my dashboard. Which one is my confirmed practice interview?","label":"check_schedule"}
+{"split":"test","text":"Can the coach tell me whether my answers sounded prepared or rehearsed in the round I just finished?","label":"request_feedback"}
+{"split":"test","text":"I need directions from the bus station to the engineering building.","label":"out_of_scope"}
+{"split":"test","text":"The panel has one seat left on the 23rd. I'd like to take it.","label":"schedule_interview"}
+{"split":"test","text":"I've got Paul's slot at 2. Is there any way to take the later slot instead?","label":"reschedule_interview"}
+{"split":"test","text":"I'm dropping out of the alumni practice round. Update my booking accordingly.","label":"cancel_interview"}
+{"split":"test","text":"Are we still on for the interview simulation this evening?","label":"check_schedule"}
+{"split":"test","text":"I finished the mock yesterday and didn't receive the review. Can I get it here?","label":"request_feedback"}
+{"split":"test","text":"Can you help me record a sample answer I can practise before the mock?","label":"out_of_scope"}
+{"split":"test","text":"I just unlocked the mock interview feature. Help me set up a session.","label":"schedule_interview"}
+{"split":"test","text":"The session was assigned during my shift. I need it outside work hours.","label":"reschedule_interview"}
+{"split":"test","text":"I can't commit to the prep program. Please take me out of the two mock sessions I reserved.","label":"cancel_interview"}
+{"split":"test","text":"Which week did I choose when I registered for the mentor round?","label":"check_schedule"}
+{"split":"test","text":"Did I cover enough edge cases in the exercise I solved during the practice interview?","label":"request_feedback"}
+{"split":"test","text":"What's the refund policy for the placement preparation membership?","label":"out_of_scope"}
+{"split":"test","text":"Please create a practice interview booking under my student profile.","label":"schedule_interview"}
+{"split":"test","text":"We agreed to meet on the 9th. Can the booking date be corrected to the 19th?","label":"reschedule_interview"}
+{"split":"test","text":"There's a mock appointment under my profile that I don't intend to use. Let it go.","label":"cancel_interview"}
+{"split":"test","text":"My inbox has a waitlist notice and a calendar invite. Am I booked?","label":"check_schedule"}
+{"split":"test","text":"Help me understand the low structure score from my training interview.","label":"request_feedback"}
+{"split":"test","text":"The mock dashboard freezes when I open it. How do I report the bug?","label":"out_of_scope"}
+{"split":"test","text":"I'd like somebody to interview me before Tuesday's coding assessment. Can you arrange that?","label":"schedule_interview"}
+{"split":"test","text":"Can you push back my reserved mock by 45 min?","label":"reschedule_interview"}
+{"split":"test","text":"I won't be there for the session with the mentor. I'd like to withdraw my reservation.","label":"cancel_interview"}
+{"split":"test","text":"Could you check whether my allocated mock is before or after the workshop?","label":"check_schedule"}
+{"split":"test","text":"Which answer from my completed mock should I redo before my real interview?","label":"request_feedback"}
+{"split":"test","text":"Please send me the list of guest speakers for tomorrow's event.","label":"out_of_scope"}
+{"split":"test","text":"Can I use the remaining credit to get a slot with a different interviewer for another mock?","label":"schedule_interview"}
+{"split":"test","text":"I'm down for the morning group, but I need my interview in the evening group.","label":"reschedule_interview"}
+{"split":"test","text":"I signed up before I knew we had to attend in person. Please release that appointment.","label":"cancel_interview"}
+{"split":"test","text":"My registration number is M023. Can you see if an appointment is attached to it?","label":"check_schedule"}
+{"split":"test","text":"Can somebody review the recording of my mock and flag filler words I used?","label":"request_feedback"}
+{"split":"test","text":"Can you check the grammar in my project description before I publish it?","label":"out_of_scope"}
+{"split":"test","text":"I see a slot right after orientation. Count me in for that mock.","label":"schedule_interview"}
+{"split":"test","text":"Please adjust the slot that is already in my dashboard so it ends before 3.","label":"reschedule_interview"}
+{"split":"test","text":"Could you remove Friday's mock from my upcoming sessions so nobody waits for me?","label":"cancel_interview"}
+{"split":"test","text":"The confirmation page disappeared. I need to know if my slot is listed as pending.","label":"check_schedule"}
+{"split":"test","text":"I finished the trial interview on the placement portal. How did I perform overall?","label":"request_feedback"}
+{"split":"test","text":"What documents should I bring to an in-person recruitment drive?","label":"out_of_scope"}

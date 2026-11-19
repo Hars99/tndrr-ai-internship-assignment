@@ -1,0 +1,60 @@
+{"text": "There's an opening with the alumni mentor at noon. Can you put my name on it?", "expected": "schedule_interview", "predicted": "check_schedule", "correct": false}
+{"text": "The person running my mock is on leave when I'm booked. Please find a replacement time.", "expected": "reschedule_interview", "predicted": "reschedule_interview", "correct": true}
+{"text": "I registered for the English mock twice. Could you keep one entry and remove the duplicate?", "expected": "cancel_interview", "predicted": "check_schedule", "correct": false}
+{"text": "Did the system save my reservation when the network dropped?", "expected": "check_schedule", "predicted": "schedule_interview", "correct": false}
+{"text": "I rambled on the teamwork question. How did that affect the result of the mock?", "expected": "request_feedback", "predicted": "schedule_interview", "correct": false}
+{"text": "Can you draft a short thank-you message to the recruiter who interviewed me?", "expected": "out_of_scope", "predicted": "Sure! Here’s a sample thank-you message:\n\n---\n\nDear [Recruiter's Name],\n\nI hope this message finds", "correct": false}
+{"text": "I couldn't attend the last cycle and want to register for the new mock round.", "expected": "schedule_interview", "predicted": "register_for_new_mock_round", "correct": false}
+{"text": "I have a train at the same time as the practice call. Could the call happen after I arrive?", "expected": "reschedule_interview", "predicted": "check_schedule", "correct": false}
+{"text": "I've changed my mind about doing a trial interview. Please give my place to the waitlist.", "expected": "cancel_interview", "predicted": "reschedule_interview", "correct": false}
+{"text": "The calendar says 17:00 GMT. What time should I join locally for the session I'm booked into?", "expected": "check_schedule", "predicted": "check_schedule", "correct": true}
+{"text": "Were my answers too fast for the assessor during our trial run?", "expected": "request_feedback", "predicted": "schedule_interview", "correct": false}
+{"text": "Could you explain what the reschedule button does without changing my booking?", "expected": "out_of_scope", "predicted": "Reschedule button: Move an existing mock interview to a different time or date.", "correct": false}
+{"text": "Can I get on an interviewer's calendar for a trial round sometime this week?", "expected": "schedule_interview", "predicted": "check_schedule", "correct": false}
+{"text": "I accepted the calendar invite, then the college changed our viva time. Any chance of moving my interview?", "expected": "reschedule_interview", "predicted": "reschedule_interview", "correct": true}
+{"text": "I stopped the course this week. Can you clear the practice interview on my calendar?", "expected": "cancel_interview", "predicted": "check_schedule", "correct": false}
+{"text": "How late is the booked mock expected to finish?", "expected": "check_schedule", "predicted": "check_schedule", "correct": true}
+{"text": "My simulated interview is complete. Where do I find the rubric breakdown?", "expected": "request_feedback", "predicted": "check_schedule", "correct": false}
+{"text": "Please remove my old phone number from the application form.", "expected": "out_of_scope", "predicted": "cancel_interview", "correct": false}
+{"text": "I have half an hour free during the lunch break. Can you get me a mock round in that window?", "expected": "schedule_interview", "predicted": "check_schedule", "correct": false}
+{"text": "Can we keep the mock and do it two days from now instead?", "expected": "reschedule_interview", "predicted": "schedule_interview", "correct": false}
+{"text": "Please unbook the session under my name for 6:30 tonight.", "expected": "cancel_interview", "predicted": "cancel_interview", "correct": true}
+{"text": "I have two entries in my dashboard. Which one is my confirmed practice interview?", "expected": "check_schedule", "predicted": "check_schedule", "correct": true}
+{"text": "Can the coach tell me whether my answers sounded prepared or rehearsed in the round I just finished?", "expected": "request_feedback", "predicted": "check_schedule", "correct": false}
+{"text": "I need directions from the bus station to the engineering building.", "expected": "out_of_scope", "predicted": "check_schedule", "correct": false}
+{"text": "The panel has one seat left on the 23rd. I'd like to take it.", "expected": "schedule_interview", "predicted": "check_schedule", "correct": false}
+{"text": "I've got Paul's slot at 2. Is there any way to take the later slot instead?", "expected": "reschedule_interview", "predicted": "reschedule_interview", "correct": true}
+{"text": "I'm dropping out of the alumni practice round. Update my booking accordingly.", "expected": "cancel_interview", "predicted": "update_booking", "correct": false}
+{"text": "Are we still on for the interview simulation this evening?", "expected": "check_schedule", "predicted": "check_schedule", "correct": true}
+{"text": "I finished the mock yesterday and didn't receive the review. Can I get it here?", "expected": "request_feedback", "predicted": "check_schedule", "correct": false}
+{"text": "Can you help me record a sample answer I can practise before the mock?", "expected": "out_of_scope", "predicted": "record_sample_answer", "correct": false}
+{"text": "I just unlocked the mock interview feature. Help me set up a session.", "expected": "schedule_interview", "predicted": "schedule_interview", "correct": true}
+{"text": "The session was assigned during my shift. I need it outside work hours.", "expected": "reschedule_interview", "predicted": "reschedule_interview", "correct": true}
+{"text": "I can't commit to the prep program. Please take me out of the two mock sessions I reserved.", "expected": "cancel_interview", "predicted": "reschedule_interview", "correct": false}
+{"text": "Which week did I choose when I registered for the mentor round?", "expected": "check_schedule", "predicted": "check_schedule", "correct": true}
+{"text": "Did I cover enough edge cases in the exercise I solved during the practice interview?", "expected": "request_feedback", "predicted": "check_schedule", "correct": false}
+{"text": "What's the refund policy for the placement preparation membership?", "expected": "out_of_scope", "predicted": "check_schedule", "correct": false}
+{"text": "Please create a practice interview booking under my student profile.", "expected": "schedule_interview", "predicted": "book_a_new_mock_interview", "correct": false}
+{"text": "We agreed to meet on the 9th. Can the booking date be corrected to the 19th?", "expected": "reschedule_interview", "predicted": "reschedule_interview", "correct": true}
+{"text": "There's a mock appointment under my profile that I don't intend to use. Let it go.", "expected": "cancel_interview", "predicted": "cancel_interview", "correct": true}
+{"text": "My inbox has a waitlist notice and a calendar invite. Am I booked?", "expected": "check_schedule", "predicted": "check_schedule", "correct": true}
+{"text": "Help me understand the low structure score from my training interview.", "expected": "request_feedback", "predicted": "intimidation", "correct": false}
+{"text": "The mock dashboard freezes when I open it. How do I report the bug?", "expected": "out_of_scope", "predicted": "report_bug", "correct": false}
+{"text": "I'd like somebody to interview me before Tuesday's coding assessment. Can you arrange that?", "expected": "schedule_interview", "predicted": "reschedule_interview", "correct": false}
+{"text": "Can you push back my reserved mock by 45 min?", "expected": "reschedule_interview", "predicted": "reschedule_interview", "correct": true}
+{"text": "I won't be there for the session with the mentor. I'd like to withdraw my reservation.", "expected": "cancel_interview", "predicted": "cancel_interview", "correct": true}
+{"text": "Could you check whether my allocated mock is before or after the workshop?", "expected": "check_schedule", "predicted": "check_schedule", "correct": true}
+{"text": "Which answer from my completed mock should I redo before my real interview?", "expected": "request_feedback", "predicted": "check_schedule", "correct": false}
+{"text": "Please send me the list of guest speakers for tomorrow's event.", "expected": "out_of_scope", "predicted": "check_schedule", "correct": false}
+{"text": "Can I use the remaining credit to get a slot with a different interviewer for another mock?", "expected": "schedule_interview", "predicted": "reschedule_interview", "correct": false}
+{"text": "I'm down for the morning group, but I need my interview in the evening group.", "expected": "reschedule_interview", "predicted": "reschedule_interview", "correct": true}
+{"text": "I signed up before I knew we had to attend in person. Please release that appointment.", "expected": "cancel_interview", "predicted": "cancel_interview", "correct": true}
+{"text": "My registration number is M023. Can you see if an appointment is attached to it?", "expected": "check_schedule", "predicted": "check_schedule", "correct": true}
+{"text": "Can somebody review the recording of my mock and flag filler words I used?", "expected": "request_feedback", "predicted": "check_schedule", "correct": false}
+{"text": "Can you check the grammar in my project description before I publish it?", "expected": "out_of_scope", "predicted": "review_project_description", "correct": false}
+{"text": "I see a slot right after orientation. Count me in for that mock.", "expected": "schedule_interview", "predicted": "check_schedule", "correct": false}
+{"text": "Please adjust the slot that is already in my dashboard so it ends before 3.", "expected": "reschedule_interview", "predicted": "Request_feedback", "correct": false}
+{"text": "Could you remove Friday's mock from my upcoming sessions so nobody waits for me?", "expected": "cancel_interview", "predicted": "reschedule_interview", "correct": false}
+{"text": "The confirmation page disappeared. I need to know if my slot is listed as pending.", "expected": "check_schedule", "predicted": "check_schedule", "correct": true}
+{"text": "I finished the trial interview on the placement portal. How did I perform overall?", "expected": "request_feedback", "predicted": "check_schedule", "correct": false}
+{"text": "What documents should I bring to an in-person recruitment drive?", "expected": "out_of_scope", "predicted": "check_schedule", "correct": false}

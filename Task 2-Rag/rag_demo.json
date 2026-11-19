@@ -1,0 +1,32 @@
+{
+  "question": "What mechanism does Git use to checksum files and directories before storing them, and what does that checksum look like?",
+  "model": "tndrr-q4",
+  "passages": [
+    {
+      "page": 22,
+      "text": "its philosophy. You can’t lose information in transit or get file corruption without Git being able to detect it. The mechanism that Git uses for this checksumming is called a SHA-1 hash. This is a 40-character string composed of hexadecimal characters (0–9 and a–f) and calculated based on the contents of a file or directory structure in Git. A SHA-1 hash looks something like this: 24b9da6552252987aa493b52f8696cd6d3b00373 You will see these hash values all over the place in Git because it uses them so much. In fact, Git stores everything in its database not by file name but by the hash value of its contents. Git Generally Only Adds Data When you do actions in Git, nearly all of them only add data to the Git database. It is hard to get the system to do anything",
+      "cosine_similarity": 0.7848600149154663
+    },
+    {
+      "page": 257,
+      "text": ". Here is an example of getting the actual directory listing and SHA-1 checksums for each file in the HEAD snapshot: $ git cat-file -p HEAD tree cfda3bf379e4f8dba8717dee55aab78aef7f4daf author Scott Chacon 1301511835 -0700 committer Scott Chacon 1301511835 -0700 initial commit 251",
+      "cosine_similarity": 0.7019492983818054
+    },
+    {
+      "page": 69,
+      "text": "you have a directory containing three files, and you stage them all and commit. Staging the files computes a checksum for each one (the SHA-1 hash we mentioned in What is Git?), stores that version of the file in the Git repository (Git refers to them as blobs), and adds that checksum to the staging area: $ git add README test.rb LICENSE $ git commit -m 'Initial commit' When you create the commit by running git commit, Git checksums each subdirectory (in this case, just the root project directory) and stores them as a tree object in the Git repository. Git then creates a commit object that has the metadata and a pointer to the root project tree so it can re-create that snapshot when needed. Your Git repository now contains five objects: three blobs (each representing the contents of one of the three files), one tree",
+      "cosine_similarity": 0.6818011999130249
+    },
+    {
+      "page": 422,
+      "text": "d670460b4b4aece5915caf5c68d12f560a9fe3e4 In its simplest form, git hash-object would take the content you handed to it and merely return the unique key that would be used to store it in your Git database. The -w option then tells the command to not simply return the key, but to write that object to the database. Finally, the --stdin option tells git hash-object to get the content to be processed from stdin; otherwise, the command would expect a filename argument at the end of the command containing the content to be used. The output from the above command is a 40-character checksum hash. This is the SHA-1 hash — a checksum of the content you’re storing plus a header, which you’ll learn about in a bit. Now you can see how Git has stored your data: $ find",
+      "cosine_similarity": 0.6384140253067017
+    },
+    {
+      "page": 362,
+      "text": "post- checkout and post-merge hooks. After you run a successful git checkout, the post-checkout hook runs; you can use it to set up your working directory properly for your project environment. This may mean moving in large binary files that you don’t want source controlled, auto-generating documentation, or something along those lines. The post-merge hook runs after a successful merge command. You can use it to restore data in the working tree that Git can’t track, such as permissions data. This hook can likewise validate the presence of files external to Git control that you may want copied in when the working tree changes. The pre-push hook runs during git push, after the remote refs have been updated but before any objects have been transferred. It receives the name and location of the remote as parameters, and a list of to-be-updated refs through stdin. You can use it to validate a set of",
+      "cosine_similarity": 0.6273844242095947
+    }
+  ],
+  "answer": "Git uses SHA-1 hash to checksum files and directories before storing them in its database. The checksum looks something like this: 24b9da6552252987aa493b52f8696cd6d3b00373"
+}

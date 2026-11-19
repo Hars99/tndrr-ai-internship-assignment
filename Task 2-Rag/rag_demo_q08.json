@@ -1,0 +1,32 @@
+{
+  "question": "Which git log option lets me search for commits that added or removed a specific string in the code?",
+  "model": "tndrr-q4",
+  "passages": [
+    {
+      "page": 51,
+      "text": "You can also filter the list to commits that match some search criteria. The --author option allows you to filter on a specific author, and the --grep option lets you search for keywords in the commit messages.  You can specify more than one instance of both the --author and --grep search criteria, which will limit the commit output to commits that match any of the --author patterns and any of the --grep patterns; however, adding the --all-match option further limits the output to just those commits that match all --grep patterns. Another really helpful filter is the -S option (colloquially referred to as Git’s “pickaxe” option), which takes a string and shows only those commits that changed the number of occurrences of that string. For instance, if you wanted to find the last commit that added or removed a reference to a specific function, you could call: $ git log -S function_",
+      "cosine_similarity": 0.7872625589370728
+    },
+    {
+      "page": 247,
+      "text": "that was currently checked out. Git Log Searching Perhaps you’re looking not for where a term exists, but when it existed or was introduced. The git log command has a number of powerful tools for finding specific commits by the content of their messages or even the content of the diff they introduce. If, for example, we want to find out when the ZLIB_BUF_MAX constant was originally introduced, we can use the -S option (colloquially referred to as the Git “pickaxe” option) to tell Git to show us only those commits that changed the number of occurrences of that string. 241",
+      "cosine_similarity": 0.7614132761955261
+    },
+    {
+      "page": 51,
+      "text": "those made before the specified date. --author Only show commits in which the author entry matches the specified string. --committer Only show commits in which the committer entry matches the specified string. --grep Only show commits with a commit message containing the string. -S Only show commits adding or removing code matching the string. For example, if you want to see which commits modifying test files in the Git source code history were committed by Junio Hamano in the month of October 2008 and are not merge commits, you 45",
+      "cosine_similarity": 0.6810921430587769
+    },
+    {
+      "page": 48,
+      "text": "removed. It also puts a summary of the information at the end. Another really useful option is --pretty. This option changes the log output to formats other than the default. A few prebuilt option values are available for you to use. The oneline value for this option prints each commit on a single line, which is useful if you’re looking at a lot of commits. In addition, the short, full, and fuller values show the output in roughly the same format but with less or more information, respectively: $ git log --pretty=oneline ca82a6dff817ec66f44342007202690a93763949 Change version number 085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7 Remove unnecessary test a11bef06a3f659402fe7563abf99",
+      "cosine_similarity": 0.6599438190460205
+    },
+    {
+      "page": 494,
+      "text": "One of the more interesting things we do with git show is in Manual File Re-merging to extract specific file contents of various stages during a merge conflict. git shortlog The git shortlog command is used to summarize the output of git log. It will take many of the same options that the git log command will but instead of listing out all of the commits it will present a summary of the commits grouped by author. We showed how to use it to create a nice changelog in The Shortlog. git describe The git describe command is used to take anything that resolves to a commit and produces a string that is somewhat human-readable and will not change. It’s a way to get a description of a commit that is as unambiguous as a commit SHA-1 but more understandable. We use git describe in Generating a Build Number and Preparing a Release to get a string to name our release file after. Debu",
+      "cosine_similarity": 0.6572661399841309
+    }
+  ],
+  "answer": "--S"
+}

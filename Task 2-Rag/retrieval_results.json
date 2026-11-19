@@ -1,0 +1,1046 @@
+{
+  "source": "progit.pdf",
+  "pdf_sha256": "403f4051cdca2c585361d85f6e87d5dd87d8c544fc91dced007711babe81e8ef",
+  "pdf_pages": 501,
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "overlap_tokens": 20,
+  "top_k": 5,
+  "runs": [
+    {
+      "chunk_tokens": 80,
+      "chunks": 4021,
+      "recall_at_5": 0.3333333333333333,
+      "hits_at_5": 5,
+      "questions": [
+        {
+          "question": "How does Git fundamentally store data differently from delta-based version control systems like Subversion or Perforce?",
+          "page": 21,
+          "passage": "Instead, Git thinks of its data more like a series of snapshots of a miniature filesystem. With Git, every time you commit, or save the state of your project, Git basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot.",
+          "relevant_rank": null,
+          "hit_at_5": false,
+          "top_5": [
+            {
+              "page": 20,
+              "text": "s, Not Differences The major difference between Git and any other VCS (Subversion and friends included) is the way Git thinks about its data. Conceptually, most other systems store information as a list of file-based changes. These other systems (CVS, Subversion, Perforce, and so on) think of the information they store as a set of files and the changes",
+              "cosine_similarity": 0.7439849972724915
+            },
+            {
+              "page": 21,
+              "text": "of version control that most other systems copied from the previous generation. This makes Git more like a mini filesystem with some incredibly powerful tools built on top of it, rather than simply a VCS. We’ll explore some of the benefits you gain by thinking of your data this way when we cover Git branching in Git Branching. Nearly Every Operation Is Local Most operations in Git",
+              "cosine_similarity": 0.722743570804596
+            },
+            {
+              "page": 21,
+              "text": "Figure 4. Storing data as changes to a base version of each file Git doesn’t think of or store its data this way. Instead, Git thinks of its data more like a series of snapshots of a miniature filesystem. With Git, every time you commit, or save the state of your project, Git basically takes a picture of what all your files look",
+              "cosine_similarity": 0.7072051763534546
+            },
+            {
+              "page": 20,
+              "text": "force, and so on) think of the information they store as a set of files and the changes made to each file over time (this is commonly described as delta-based version control). 14",
+              "cosine_similarity": 0.705940842628479
+            },
+            {
+              "page": 16,
+              "text": "why Git is around, why you should use it and you should be all set up to do so. About Version Control What is “version control”, and why should you care? Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later. For the examples in this book, you will use software source code as the files",
+              "cosine_similarity": 0.6791958808898926
+            }
+          ]
+        },
+        {
+          "question": "What mechanism does Git use to checksum files and directories before storing them, and what does that checksum look like?",
+          "page": 22,
+          "passage": "The mechanism that Git uses for this checksumming is called a SHA-1 hash. This is a 40-character string composed of hexadecimal characters (0–9 and a–f) and calculated based on the contents of a file or directory structure in Git.",
+          "relevant_rank": null,
+          "hit_at_5": false,
+          "top_5": [
+            {
+              "page": 22,
+              "text": "its philosophy. You can’t lose information in transit or get file corruption without Git being able to detect it. The mechanism that Git uses for this checksumming is called a SHA-1 hash. This is a 40-character string composed of hexadecimal characters (0–9 and a–f) and calculated based on the contents of a file or directory structure in",
+              "cosine_similarity": 0.7691329121589661
+            },
+            {
+              "page": 22,
+              "text": "Integrity Everything in Git is checksummed before it is stored and is then referred to by that checksum. This means it’s impossible to change the contents of any file or directory without Git knowing about it. This functionality is built into Git at the lowest levels and is integral to its philosophy. You can’t lose information in transit or get file corruption without Git being able",
+              "cosine_similarity": 0.7382623553276062
+            },
+            {
+              "page": 69,
+              "text": "you have a directory containing three files, and you stage them all and commit. Staging the files computes a checksum for each one (the SHA-1 hash we mentioned in What is Git?), stores that version of the file in the Git repository (Git refers to them as blobs), and adds that checksum to the staging area: $ git add",
+              "cosine_similarity": 0.7120686769485474
+            },
+            {
+              "page": 257,
+              "text": ". Here is an example of getting the actual directory listing and SHA-1 checksums for each file in the HEAD snapshot: $ git cat-file -p HEAD tree cfda3bf379e4f8dba8717dee55aab78aef7f4daf author Scott Chacon 1301511835 -0700 committer Scott Cha",
+              "cosine_similarity": 0.7006644606590271
+            },
+            {
+              "page": 423,
+              "text": "group of files together. Git stores content in a manner similar to a UNIX filesystem, but a bit simplified. All the content is stored as tree and blob objects, with trees corresponding to UNIX directory entries and blobs corresponding more or less to inodes or file contents. A single tree object contains one or more entries, each of which is the SHA-1 hash of",
+              "cosine_similarity": 0.6534371376037598
+            }
+          ]
+        },
+        {
+          "question": "What are the three main states that files can reside in within Git?",
+          "page": 22,
+          "passage": "Git has three main states that your files can reside in: modified, staged, and committed:",
+          "relevant_rank": 1,
+          "hit_at_5": true,
+          "top_5": [
+            {
+              "page": 22,
+              "text": "and how you can recover data that seems lost, see Undoing Things. The Three States Pay attention now — here is the main thing to remember about Git if you want the rest of your learning process to go smoothly. Git has three main states that your files can reside in: modified, staged, and committed: 16",
+              "cosine_similarity": 0.6495213508605957
+            },
+            {
+              "page": 23,
+              "text": "the three main sections of a Git project: the working tree, the staging area, and the Git directory. Figure 6. Working tree, staging area, and Git directory The working tree is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify. The staging area",
+              "cosine_similarity": 0.6437512636184692
+            },
+            {
+              "page": 453,
+              "text": "message, for example). If unset, EDITOR will be used. Repository Locations Git uses several environment variables to determine how it interfaces with the current repository. GIT_DIR is the location of the .git folder. If this isn’t specified, Git walks up the directory tree until it gets to ~ or /, looking for a .git directory at every step.",
+              "cosine_similarity": 0.60240638256073
+            },
+            {
+              "page": 423,
+              "text": "group of files together. Git stores content in a manner similar to a UNIX filesystem, but a bit simplified. All the content is stored as tree and blob objects, with trees corresponding to UNIX directory entries and blobs corresponding more or less to inodes or file contents. A single tree object contains one or more entries, each of which is the SHA-1 hash of",
+              "cosine_similarity": 0.601286768913269
+            },
+            {
+              "page": 352,
+              "text": "settings are called Git attributes and are set either in a .gitattributes file in one of your directories (normally the root of your project) or in the .git/info/attributes file if you don’t want the attributes file committed with your project. Using attributes, you can do things like specify separate merge strategies for individual files or directories in your project,",
+              "cosine_similarity": 0.589697003364563
+            }
+          ]
+        },
+        {
+          "question": "Which command and flag allow me to view which configuration file had the final say in setting a specific Git variable?",
+          "page": 30,
+          "passage": "$ git config --show-origin rerere.autoUpdate file:/home/johndoe/.gitconfig false",
+          "relevant_rank": 12,
+          "hit_at_5": false,
+          "top_5": [
+            {
+              "page": 342,
+              "text": "this file by passing the --global option. Finally, Git looks for configuration values in the configuration file in the Git directory ( .git/config) of whatever repository you’re currently using. These values are specific to that single repository, and represent passing the --local option to git config. If you don’t specify which level you want to",
+              "cosine_similarity": 0.7073898315429688
+            },
+            {
+              "page": 27,
+              "text": "get and set configuration variables that control all aspects of how Git looks and operates. These variables can be stored in three different places: 1. [path]/etc/gitconfig file: Contains values applied to every user on the system and all their repositories. If you pass the option --system to git config, it reads and writes from this",
+              "cosine_similarity": 0.6944484710693359
+            },
+            {
+              "page": 342,
+              "text": ", it reads and writes from this file specifically. The next place Git looks is the ~/.gitconfig (or ~/.config/git/config) file, which is specific to each user. You can make Git read and write to this file by passing the --global option. Finally, Git looks for configuration values in the",
+              "cosine_similarity": 0.6873399019241333
+            },
+            {
+              "page": 342,
+              "text": "Git looks for these values is in the system-wide [path]/etc/gitconfig file, which contains settings that are applied to every user on the system and all of their repositories. If you pass the option --system to git config , it reads and writes from this file specifically. The next place Git looks is the ~/",
+              "cosine_similarity": 0.6739972233772278
+            },
+            {
+              "page": 27,
+              "text": "you pass the option --system to git config, it reads and writes from this file specifically. Because this is a system configuration file, you would need administrative or superuser privilege to make changes to it. 2. ~/.gitconfig or ~/.config/git/config file: Values specific personally to you, the user.",
+              "cosine_similarity": 0.6736698150634766
+            }
+          ]
+        },
+        {
+          "question": "What happens if I modify a tracked file after I have already staged it with git add, and then immediately run git commit?",
+          "page": 37,
+          "passage": "If you commit now, the version of CONTRIBUTING.md as it was when you last ran the git add command is how it will go into the commit, not the version of the file as it looks in your working directory when you run git commit.",
+          "relevant_rank": null,
+          "hit_at_5": false,
+          "top_5": [
+            {
+              "page": 42,
+              "text": "— any files you have created or modified that you haven’t run git add on since you edited them — won’t go into this commit. They will stay as modified files on your disk. In this case, let’s say that the last time you ran git status, you saw that everything was staged, so you’re ready to commit your changes. The simplest way to",
+              "cosine_similarity": 0.7386578321456909
+            },
+            {
+              "page": 43,
+              "text": "a option to the git commit command makes Git automatically stage every file that is already tracked before doing the commit, letting you skip the git add part: $ git status On branch master Your branch is up-to-date with 'origin/master'. Changes not staged for commit: (use \"git add <file>...\" to update what will be committed",
+              "cosine_similarity": 0.7251054644584656
+            },
+            {
+              "page": 34,
+              "text": "of your files will be tracked and unmodified because Git just checked them out and you haven’t edited anything. As you edit files, Git sees them as modified, because you’ve changed them since your last commit. As you work, you selectively stage these modified files and then commit all those staged changes, and the cycle repeats. Figure 8. The lifecycle of",
+              "cosine_similarity": 0.7230892181396484
+            },
+            {
+              "page": 35,
+              "text": "tracked basically means that Git sees a file you didn’t have in the previous snapshot (commit), and which hasn’t yet been staged; Git won’t start including it in your commit snapshots until you explicitly tell it to do so. It does this so you don’t accidentally begin including generated binary files or other files that you did not mean to include",
+              "cosine_similarity": 0.699181079864502
+            },
+            {
+              "page": 36,
+              "text": "(use \"git restore --staged <file>...\" to unstage) new file: README You can tell that it’s staged because it’s under the “Changes to be committed” heading. If you commit at this point, the version of the file at the time you ran git add is what will be in the subsequent historical snapshot. You",
+              "cosine_similarity": 0.677859902381897
+            }
+          ]
+        },
+        {
+          "question": "How can I remove a file from Git's staging area so it stops being tracked, while still keeping the file on my hard drive?",
+          "page": 45,
+          "passage": "To do this, use the --cached option: $ git rm --cached README",
+          "relevant_rank": 8,
+          "hit_at_5": false,
+          "top_5": [
+            {
+              "page": 44,
+              "text": "but be careful; sometimes this flag will cause you to include unwanted changes. Removing Files To remove a file from Git, you have to remove it from your tracked files (more accurately, remove it from your staging area) and then commit. The git rm command does that, and also removes the file from your working directory so you don’t see it as an untracked file the",
+              "cosine_similarity": 0.7884337902069092
+            },
+            {
+              "page": 44,
+              "text": "accidental removal of data that hasn’t yet been recorded in a snapshot and that can’t be recovered from Git. Another useful thing you may want to do is to keep the file in your working tree but remove it from your staging area. In other words, you may want to keep the file on your hard drive but not have Git track it anymore. This is particularly useful if",
+              "cosine_similarity": 0.7627253532409668
+            },
+            {
+              "page": 451,
+              "text": "-tree-filter option used in Rewriting History, except that instead of passing a command that modifies files checked out on disk, you’re modifying your staging area or index each time. Rather than remove a specific file with something like rm file, you have to remove it with git rm --cached – you must remove it from the index, not from disk. The reason to",
+              "cosine_similarity": 0.7109652757644653
+            },
+            {
+              "page": 240,
+              "text": "can do so with git clean. To remove all the untracked files in your working directory, you can run git clean -f -d , which removes any files and also any subdirectories that become empty as a result. The -f means 'force' or “really do this,” and is required if the Git configuration variable clean.requireForce is not",
+              "cosine_similarity": 0.6675297021865845
+            },
+            {
+              "page": 44,
+              "text": "the file from your working directory so you don’t see it as an untracked file the next time around. If you simply remove the file from your working directory, it shows up under the “Changes not staged for commit” (that is, unstaged) area of your git status output: $ rm PROJECTS.md $ git status On branch master Your branch is up-",
+              "cosine_similarity": 0.6599729061126709
+            }
+          ]
+        },
+        {
+          "question": "In git log --pretty=format, what is the difference between the author and the committer?",
+          "page": 49,
+          "passage": "The author is the person who originally wrote the work, whereas the committer is the person who last applied the work.",
+          "relevant_rank": 28,
+          "hit_at_5": false,
+          "top_5": [
+            {
+              "page": 49,
+              "text": "bef0 - Scott Chacon, 6 years ago : Initial commit Useful specifiers for git log --pretty=format lists some of the more useful specifiers that format takes. Table 1. Useful specifiers for git log --pretty=format Specifier Description of Output %H Commit hash %h Abbreviated commit hash %T Tree hash %t Abbreviated tree hash %P Parent hash",
+              "cosine_similarity": 0.7608873248100281
+            },
+            {
+              "page": 50,
+              "text": "and merge history beside the log output. --pretty Show commits in an alternate format. Option values include oneline, short, full, fuller, and format (where you specify your own format). --oneline Shorthand for --pretty=oneline --abbrev-commit used together. Limiting Log Output In addition to output-formatting options, git log takes",
+              "cosine_similarity": 0.732288122177124
+            },
+            {
+              "page": 49,
+              "text": "$ git log --pretty=format:\"%h - %an, %ar : %s\" ca82a6d - Scott Chacon, 6 years ago : Change version number 085bb3b - Scott Chacon, 6 years ago : Remove unnecessary test a11bef0 - Scott Chacon, 6 years ago : Initial commit Useful specifiers for git",
+              "cosine_similarity": 0.7321084141731262
+            },
+            {
+              "page": 48,
+              "text": "commit on a single line, which is useful if you’re looking at a lot of commits. In addition, the short, full, and fuller values show the output in roughly the same format but with less or more information, respectively: $ git log --pretty=oneline ca82a6dff817ec66f44342007202690a937",
+              "cosine_similarity": 0.7306368350982666
+            },
+            {
+              "page": 159,
+              "text": "$ git log --pretty=fuller -1 commit 6c5e70b984a60b3cecd395edd5b48a7575bf58e0 Author: Jessica Smith <jessica@example.com> AuthorDate: Sun Apr 6 10:17:23 2008 -0700 Commit: Scott Chacon <schacon@gmail.com",
+              "cosine_similarity": 0.6946150064468384
+            }
+          ]
+        },
+        {
+          "question": "Which git log option lets me search for commits that added or removed a specific string in the code?",
+          "page": 51,
+          "passage": "Another really helpful filter is the -S option (colloquially referred to as Git’s “pickaxe” option), which takes a string and shows only those commits that changed the number of occurrences of that string.",
+          "relevant_rank": 1,
+          "hit_at_5": true,
+          "top_5": [
+            {
+              "page": 51,
+              "text": ". Another really helpful filter is the -S option (colloquially referred to as Git’s “pickaxe” option), which takes a string and shows only those commits that changed the number of occurrences of that string. For instance, if you wanted to find the last commit that added or removed a reference to a specific function, you could call: $ git log -S function_",
+              "cosine_similarity": 0.822609007358551
+            },
+            {
+              "page": 51,
+              "text": "commits adding or removing code matching the string. For example, if you want to see which commits modifying test files in the Git source code history were committed by Junio Hamano in the month of October 2008 and are not merge commits, you 45",
+              "cosine_similarity": 0.7516951560974121
+            },
+            {
+              "page": 247,
+              "text": "that was currently checked out. Git Log Searching Perhaps you’re looking not for where a term exists, but when it existed or was introduced. The git log command has a number of powerful tools for finding specific commits by the content of their messages or even the content of the diff they introduce. If, for example, we want to find out when the ZLIB_BUF_",
+              "cosine_similarity": 0.7431998252868652
+            },
+            {
+              "page": 46,
+              "text": "options to the git log command are available to show you exactly what you’re looking for. Here, we’ll show you some of the most popular. 40",
+              "cosine_similarity": 0.7103055715560913
+            },
+            {
+              "page": 248,
+              "text": "of those commits, we can see that in ef49a7a the constant was introduced and in e01503b it was modified. If you need to be more specific, you can provide a regular expression to search for with the -G option. Line Log Search Another fairly advanced log search that is insanely useful is the line history search. Simply run git log with the -",
+              "cosine_similarity": 0.7014690041542053
+            }
+          ]
+        },
+        {
+          "question": "What happens to the previous commit when I run git commit --amend?",
+          "page": 53,
+          "passage": "It’s important to understand that when you’re amending your last commit, you’re not so much fixing it as replacing it entirely with a new, improved commit that pushes the old commit out of the way and puts the new commit in its place.",
+          "relevant_rank": 2,
+          "hit_at_5": true,
+          "top_5": [
+            {
+              "page": 250,
+              "text": "subsequent git commit --amend replaces that last commit with your new, improved commit. You need to be careful with this technique because amending changes the SHA-1 of the commit. It’s like a very small rebase — don’t amend your last commit if you’ve already pushed it.  An amended commit may (or may not) need an amended commit message When you amend",
+              "cosine_similarity": 0.8255515694618225
+            },
+            {
+              "page": 53,
+              "text": "$ git commit --amend You end up with a single commit — the second commit replaces the results of the first.  It’s important to understand that when you’re amending your last commit, you’re not so much fixing it as replacing it entirely with a new, improved commit that pushes the old commit out of the way and puts the new commit in its place. Effectively,",
+              "cosine_similarity": 0.8096392750740051
+            },
+            {
+              "page": 250,
+              "text": "editor writes a new commit containing that updated commit message and makes it your new last commit. If, on the other hand, you want to change the actual content of your last commit, the process works basically the same way — first make the changes you think you forgot, stage those changes, and the subsequent git commit --amend replaces that last commit with your new, improved commit. You need",
+              "cosine_similarity": 0.7584360837936401
+            },
+            {
+              "page": 53,
+              "text": "that pushes the old commit out of the way and puts the new commit in its place. Effectively, it’s as if the previous commit never happened, and it won’t show up in your repository history. The obvious value to amending commits is to make minor improvements to your last commit, without cluttering your repository history with commit messages of the form, “Oops, forgot to",
+              "cosine_similarity": 0.7340630292892456
+            },
+            {
+              "page": 42,
+              "text": "— any files you have created or modified that you haven’t run git add on since you edited them — won’t go into this commit. They will stay as modified files on your disk. In this case, let’s say that the last time you ran git status, you saw that everything was staged, so you’re ready to commit your changes. The simplest way to",
+              "cosine_similarity": 0.704686164855957
+            }
+          ]
+        },
+        {
+          "question": "How can I push only annotated tags to a remote repository without pushing lightweight tags?",
+          "page": 65,
+          "passage": "There is currently no option to push only lightweight tags, but if you use git push <remote> --follow-tags only annotated tags will be pushed to the remote.",
+          "relevant_rank": null,
+          "hit_at_5": false,
+          "top_5": [
+            {
+              "page": 65,
+              "text": "v1.4-lw Now, when someone else clones or pulls from your repository, they will get all your tags as well.  git push pushes both types of tags git push <remote> --tags will push both lightweight and annotated tags. There is currently no option to push only lightweight tags, but if you use git push <remote> --follow-",
+              "cosine_similarity": 0.8000978827476501
+            },
+            {
+              "page": 65,
+              "text": "to push only lightweight tags, but if you use git push <remote> --follow-tags only annotated tags will be pushed to the remote. Deleting Tags To delete a tag on your local repository, you can use git tag -d <tagname>. For example, we could remove our lightweight tag above as follows: $ git tag -d v",
+              "cosine_similarity": 0.7963886260986328
+            },
+            {
+              "page": 65,
+              "text": "To git@github.com:schacon/simplegit.git * [new tag] v1.5 -> v1.5 If you have a lot of tags that you want to push up at once, you can also use the --tags option to the git push command. This will transfer all of your tags to the remote server that are not",
+              "cosine_similarity": 0.670845091342926
+            },
+            {
+              "page": 65,
+              "text": "the git push command. This will transfer all of your tags to the remote server that are not already there. $ git push origin --tags Counting objects: 1, done. Writing objects: 100% (1/1), 160 bytes | 0 bytes/s, done. Total 1 (delta 0), reused 0 (delta 0) To git@github.",
+              "cosine_similarity": 0.6135930418968201
+            },
+            {
+              "page": 62,
+              "text": "information; but if you want a temporary tag or for some reason don’t want to keep the other information, lightweight tags are available too. Annotated Tags Creating an annotated tag in Git is simple. The easiest way is to specify -a when you run the tag command: $ git tag -a v1.4 -m \"my version 1.4\" $",
+              "cosine_similarity": 0.5948933362960815
+            }
+          ]
+        },
+        {
+          "question": "Why is creating a new branch in Git almost instantaneous compared to older version control systems?",
+          "page": 75,
+          "passage": "Because a branch in Git is actually a simple file that contains the 40 character SHA-1 checksum of the commit it points to, branches are cheap to create and destroy. Creating a new branch is as quick and simple as writing 41 bytes to a file (40 characters and a newline).",
+          "relevant_rank": null,
+          "hit_at_5": false,
+          "top_5": [
+            {
+              "page": 69,
+              "text": "source code directory, which can take a long time for large projects. Some people refer to Git’s branching model as its “killer feature,” and it certainly sets Git apart in the VCS community. Why is it so special? The way Git branches is incredibly lightweight, making branching operations nearly instantaneous, and switching back and forth between branches generally just as fast. Unlike many",
+              "cosine_similarity": 0.7319971323013306
+            },
+            {
+              "page": 69,
+              "text": "branching operations nearly instantaneous, and switching back and forth between branches generally just as fast. Unlike many other VCSs, Git encourages workflows that branch and merge often, even multiple times in a day. Understanding and mastering this feature gives you a powerful and unique tool and can entirely change the way that you develop. Branches in a Nutshell To really understand the way Git does branching,",
+              "cosine_similarity": 0.7156269550323486
+            },
+            {
+              "page": 75,
+              "text": "it points to, branches are cheap to create and destroy. Creating a new branch is as quick and simple as writing 41 bytes to a file (40 characters and a newline). This is in sharp contrast to the way most older VCS tools branch, which involves copying all of the project’s files into a second directory. This can take several seconds or even minutes, depending on the size",
+              "cosine_similarity": 0.6832666397094727
+            },
+            {
+              "page": 20,
+              "text": "design • Strong support for non-linear development (thousands of parallel branches) • Fully distributed • Able to handle large projects like the Linux kernel efficiently (speed and data size) Since its birth in 2005, Git has evolved and matured to be easy to use and yet retain these initial qualities. It’s amazingly fast, it’s very efficient with large projects, and it has an incredible",
+              "cosine_similarity": 0.6714732050895691
+            },
+            {
+              "page": 69,
+              "text": "Git Branching Nearly every VCS has some form of branching support. Branching means you diverge from the main line of development and continue to do work without messing with that main line. In many VCS tools, this is a somewhat expensive process, often requiring you to create a new copy of your source code directory, which can take a long time for large projects. Some people refer to Git",
+              "cosine_similarity": 0.665605366230011
+            }
+          ]
+        },
+        {
+          "question": "What command can I use to list only the branches that contain work I have not yet merged into my current branch?",
+          "page": 86,
+          "passage": "To see all the branches that contain work you haven’t yet merged in, you can run git branch --no -merged: $ git branch --no-merged",
+          "relevant_rank": 2,
+          "hit_at_5": true,
+          "top_5": [
+            {
+              "page": 85,
+              "text": "can filter this list to branches that you have or have not yet merged into the branch you’re currently on. To see which branches are already merged into the branch you’re on, you can run git branch --merged: 79",
+              "cosine_similarity": 0.8065625429153442
+            },
+            {
+              "page": 86,
+              "text": "branch, so you’re not going to lose anything. To see all the branches that contain work you haven’t yet merged in, you can run git branch --no -merged: $ git branch --no-merged testing This shows your other branch. Because it contains work that isn’t merged in yet, trying to delete it with git branch -d will",
+              "cosine_similarity": 0.7391965389251709
+            },
+            {
+              "page": 86,
+              "text": "$ git branch --merged iss53 * master Because you already merged in iss53 earlier, you see it in your list. Branches on this list without the * in front of them are generally fine to delete with git branch -d; you’ve already incorporated their work into another branch, so you’re not going to lose anything. To see all the branches that contain work",
+              "cosine_similarity": 0.6613336801528931
+            },
+            {
+              "page": 86,
+              "text": "show you what is, respectively, merged or not merged into your current branch. You can always provide an additional argument to ask about the merge state with respect to some other branch without checking that other branch out first, as in, what is not merged into the master branch? $ git checkout testing $ git branch --no-merged master topicA featureB Changing a branch name  Do",
+              "cosine_similarity": 0.6157848834991455
+            },
+            {
+              "page": 100,
+              "text": "If you want to see what tracking branches you have set up, you can use the -vv option to git branch. This will list out your local branches with more information including what each branch is tracking and if your local branch is ahead, behind or both. $ git branch -vv iss53 7e424c3 [origin/iss53: ahead 2] Add forgotten",
+              "cosine_similarity": 0.6030663251876831
+            }
+          ]
+        },
+        {
+          "question": "When I want to replay commits from a topic branch onto my mainline branch, skipping an intermediate topic branch it was originally branched off from, what git rebase option should I use?",
+          "page": 104,
+          "passage": "You can take the changes on client that aren’t on server (C8 and C9) and replay them on your master branch by using the --onto option of git rebase: $ git rebase --onto master server client",
+          "relevant_rank": null,
+          "hit_at_5": false,
+          "top_5": [
+            {
+              "page": 105,
+              "text": "by running git rebase <basebranch> <topicbranch> — which checks out the topic branch (in this case, server) for you and replays it onto the base branch (master): $ git rebase master server This replays your server work on top of your master work, as shown in Rebasing your server branch on top of your master branch.",
+              "cosine_similarity": 0.7429599761962891
+            },
+            {
+              "page": 103,
+              "text": "rebase replay on something other than the rebase target branch. Take a history like A history with a topic branch off another topic branch , for example. You branched a topic branch ( server) to add some server-side functionality to your project, and made a commit. Then, you branched off that to make the client-side changes ( client) and committed a few times. Finally, you",
+              "cosine_similarity": 0.7313087582588196
+            },
+            {
+              "page": 166,
+              "text": "you only have one commit on a topic branch and you’d prefer to cherry-pick it rather than run rebase. For example, suppose you have a project that looks like this: 160",
+              "cosine_similarity": 0.7305717468261719
+            },
+            {
+              "page": 332,
+              "text": "commit-tree and the rebase point will be the third commit (the parent of the first commit we want to keep, 9c68fdc): $ git rebase --onto 622e88 9c68fdc First, rewinding head to replay your work on top of it... Applying: fourth commit Applying: fifth commit 326",
+              "cosine_similarity": 0.685227632522583
+            },
+            {
+              "page": 168,
+              "text": "Rerere If you’re doing lots of merging and rebasing, or you’re maintaining a long-lived topic branch, Git has a feature called “rerere” that can help. Rerere stands for “reuse recorded resolution” — it’s a way of shortcutting manual conflict resolution. When rerere is enabled, Git will keep a",
+              "cosine_similarity": 0.6557173728942871
+            }
+          ]
+        },
+        {
+          "question": "What file must exist inside a repository directory for the Git daemon to serve it over the unauthenticated git:// protocol?",
+          "page": 115,
+          "passage": "In order for a repository to be served over the Git protocol, you must create a git-daemon-export-ok file — the daemon won’t serve a repository without that file in it",
+          "relevant_rank": 1,
+          "hit_at_5": true,
+          "top_5": [
+            {
+              "page": 115,
+              "text": "but with absolutely no authentication or cryptography. In order for a repository to be served over the Git protocol, you must create a git-daemon-export-ok file — the daemon won’t serve a repository without that file in it — but, other than that, there is no security. Either the Git repository is available for everyone to clone, or it isn’t.",
+              "cosine_similarity": 0.6671186685562134
+            },
+            {
+              "page": 441,
+              "text": "client can assume the layout of the Git repository on the server.  The dumb protocol is fairly rarely used these days. It’s difficult to secure or make private, so most Git hosts (both cloud-based and on-premises) will refuse to use it. It’s generally advised to use the smart protocol, which we describe a bit further on. Let’s follow the http",
+              "cosine_similarity": 0.6301347017288208
+            },
+            {
+              "page": 115,
+              "text": "you to push over but something else for others to fetch from. The Git Protocol Finally, we have the Git protocol. This is a special daemon that comes packaged with Git; it listens on a dedicated port (9418) that provides a service similar to the SSH protocol, but with absolutely no authentication or cryptography. In order for a repository to be served over the Gi",
+              "cosine_similarity": 0.6235023140907288
+            },
+            {
+              "page": 124,
+              "text": "ALL ScriptAlias /git/ /usr/lib/git-core/git-http-backend/ If you leave out GIT_HTTP_EXPORT_ALL environment variable, then Git will only serve to unauthenticated clients the repositories with the git-daemon-export-ok file in them, just like the Git daemon",
+              "cosine_similarity": 0.6185891628265381
+            },
+            {
+              "page": 114,
+              "text": "repository in its path. The Git data is served as basic static files (see the Git Internals chapter for details about exactly how it’s served). Generally you would either choose to run a read/write Smart HTTP server or simply have the files accessible as read-only in the Dumb manner. It’s rare to run a mix of the two services. The Pros We",
+              "cosine_similarity": 0.6168825626373291
+            }
+          ]
+        },
+        {
+          "question": "When formatting a commit message according to Git's guidelines, what tense/mood should the summary line be written in, and why?",
+          "page": 137,
+          "passage": "Write your commit message in the imperative: \"Fix bug\" and not \"Fixed bug\" or \"Fixes bug.\" This convention matches up with commit messages generated by commands like git merge and git revert.",
+          "relevant_rank": 10,
+          "hit_at_5": false,
+          "top_5": [
+            {
+              "page": 343,
+              "text": "message. For instance, consider a template file at ~/.gitmessage.txt that looks like this: Subject line (try to keep under 50 characters) Multi-line description of commit, feel free to be detailed. [Ticket: X] Note how this commit template reminds the committer to keep the subject line short (for the sake of git log --oneline",
+              "cosine_similarity": 0.7122882604598999
+            },
+            {
+              "page": 137,
+              "text": "messages should start with a single line that’s no more than about 50 characters and that describes the changeset concisely, followed by a blank line, followed by a more detailed explanation. The Git project requires that the more detailed explanation include your motivation for the change and contrast its implementation with previous behavior — this is a good guideline to follow. Write your commit message in the imperative:",
+              "cosine_similarity": 0.7088706493377686
+            },
+            {
+              "page": 344,
+              "text": "Subject line (try to keep under 50 characters) Multi-line description of commit, feel free to be detailed. [Ticket: X] # Please enter the commit message for your changes. Lines starting # with '#' will be ignored, and an empty message aborts the commit. # On branch master # Changes to be committed: # (use \"git reset HEAD <file>",
+              "cosine_similarity": 0.6853324174880981
+            },
+            {
+              "page": 343,
+              "text": "committer to keep the subject line short (for the sake of git log --oneline output), to add further detail under that, and to refer to an issue or bug tracker ticket number if one exists. To tell Git to use it as the default message that appears in your editor when you run git commit, set the commit.template configuration value: $ git con",
+              "cosine_similarity": 0.6692122220993042
+            },
+            {
+              "page": 137,
+              "text": "conventions vary here - Use a hanging indent If all your commit messages follow this model, things will be much easier for you and the developers with whom you collaborate. The Git project has well-formatted commit messages — try running git log --no-merges there to see what a nicely-formatted project-commit history looks like.  Do as we say, not as we",
+              "cosine_similarity": 0.6410727500915527
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_tokens": 200,
+      "chunks": 1511,
+      "recall_at_5": 0.6666666666666666,
+      "hits_at_5": 10,
+      "questions": [
+        {
+          "question": "How does Git fundamentally store data differently from delta-based version control systems like Subversion or Perforce?",
+          "page": 21,
+          "passage": "Instead, Git thinks of its data more like a series of snapshots of a miniature filesystem. With Git, every time you commit, or save the state of your project, Git basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot.",
+          "relevant_rank": 2,
+          "hit_at_5": true,
+          "top_5": [
+            {
+              "page": 20,
+              "text": "— doing so will help you avoid subtle confusion when using the tool. Even though Git’s user interface is fairly similar to these other VCSs, Git stores and thinks about information in a very different way, and understanding these differences will help you avoid becoming confused while using it. Snapshots, Not Differences The major difference between Git and any other VCS (Subversion and friends included) is the way Git thinks about its data. Conceptually, most other systems store information as a list of file-based changes. These other systems (CVS, Subversion, Perforce, and so on) think of the information they store as a set of files and the changes made to each file over time (this is commonly described as delta-based version control). 14",
+              "cosine_similarity": 0.7554495334625244
+            },
+            {
+              "page": 21,
+              "text": "Figure 4. Storing data as changes to a base version of each file Git doesn’t think of or store its data this way. Instead, Git thinks of its data more like a series of snapshots of a miniature filesystem. With Git, every time you commit, or save the state of your project, Git basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot. To be efficient, if files have not changed, Git doesn’t store the file again, just a link to the previous identical file it has already stored. Git thinks about its data more like a stream of snapshots. Figure 5. Storing data as snapshots of the project over time This is an important distinction between Git and nearly all other VCSs. It makes Git reconsider almost every aspect of version control that most other systems copied from the previous generation. This makes Git more like a",
+              "cosine_similarity": 0.7022349834442139
+            },
+            {
+              "page": 21,
+              "text": "of version control that most other systems copied from the previous generation. This makes Git more like a mini filesystem with some incredibly powerful tools built on top of it, rather than simply a VCS. We’ll explore some of the benefits you gain by thinking of your data this way when we cover Git branching in Git Branching. Nearly Every Operation Is Local Most operations in Git need only local files and resources to operate — generally no information is needed from another computer on your network. If you’re used to a CVCS where most operations have that network latency overhead, this aspect of Git will make you think that the gods of speed have blessed Git with unworldly powers. Because you have the entire history of the project right there on your local disk, most operations seem almost instantaneous. 15",
+              "cosine_similarity": 0.6889171600341797
+            },
+            {
+              "page": 22,
+              "text": "them only add data to the Git database. It is hard to get the system to do anything that is not undoable or to make it erase data in any way. As with any VCS, you can lose or mess up changes you haven’t committed yet, but after you commit a snapshot into Git, it is very difficult to lose, especially if you regularly push your database to another repository. This makes using Git a joy because we know we can experiment without the danger of severely screwing things up. For a more in-depth look at how Git stores its data and how you can recover data that seems lost, see Undoing Things. The Three States Pay attention now — here is the main thing to remember about Git if you want the rest of your learning process to go smoothly. Git has three main states that your files can reside in: modified, staged, and committed: 16",
+              "cosine_similarity": 0.6403744220733643
+            },
+            {
+              "page": 497,
+              "text": "External Systems Git comes with a few commands to integrate with other version control systems. git svn The git svn command is used to communicate with the Subversion version control system as a client. This means you can use Git to checkout from and commit to a Subversion server. This command is covered in depth in Git and Subversion. git fast-import For other version control systems or importing from nearly any format, you can use git fast- import to quickly map the other format to something Git can easily record. This command is covered in depth in A Custom Importer. Administration If you’re administering a Git repository or need to fix something in a big way, Git provides a number of administrative commands to help you out. git gc The git gc command runs “garbage collection” on your repository, removing unnecessary files in your database and packing up the remaining files into a more efficient format. This command normally runs",
+              "cosine_similarity": 0.6215144991874695
+            }
+          ]
+        },
+        {
+          "question": "What mechanism does Git use to checksum files and directories before storing them, and what does that checksum look like?",
+          "page": 22,
+          "passage": "The mechanism that Git uses for this checksumming is called a SHA-1 hash. This is a 40-character string composed of hexadecimal characters (0–9 and a–f) and calculated based on the contents of a file or directory structure in Git.",
+          "relevant_rank": 1,
+          "hit_at_5": true,
+          "top_5": [
+            {
+              "page": 22,
+              "text": "its philosophy. You can’t lose information in transit or get file corruption without Git being able to detect it. The mechanism that Git uses for this checksumming is called a SHA-1 hash. This is a 40-character string composed of hexadecimal characters (0–9 and a–f) and calculated based on the contents of a file or directory structure in Git. A SHA-1 hash looks something like this: 24b9da6552252987aa493b52f8696cd6d3b00373 You will see these hash values all over the place in Git because it uses them so much. In fact, Git stores everything in its database not by file name but by the hash value of its contents. Git Generally Only Adds Data When you do actions in Git, nearly all of them only add data to the Git database. It is hard to get the system to do anything",
+              "cosine_similarity": 0.7848600149154663
+            },
+            {
+              "page": 257,
+              "text": ". Here is an example of getting the actual directory listing and SHA-1 checksums for each file in the HEAD snapshot: $ git cat-file -p HEAD tree cfda3bf379e4f8dba8717dee55aab78aef7f4daf author Scott Chacon 1301511835 -0700 committer Scott Chacon 1301511835 -0700 initial commit 251",
+              "cosine_similarity": 0.7019492983818054
+            },
+            {
+              "page": 69,
+              "text": "you have a directory containing three files, and you stage them all and commit. Staging the files computes a checksum for each one (the SHA-1 hash we mentioned in What is Git?), stores that version of the file in the Git repository (Git refers to them as blobs), and adds that checksum to the staging area: $ git add README test.rb LICENSE $ git commit -m 'Initial commit' When you create the commit by running git commit, Git checksums each subdirectory (in this case, just the root project directory) and stores them as a tree object in the Git repository. Git then creates a commit object that has the metadata and a pointer to the root project tree so it can re-create that snapshot when needed. Your Git repository now contains five objects: three blobs (each representing the contents of one of the three files), one tree",
+              "cosine_similarity": 0.6818011999130249
+            },
+            {
+              "page": 422,
+              "text": "d670460b4b4aece5915caf5c68d12f560a9fe3e4 In its simplest form, git hash-object would take the content you handed to it and merely return the unique key that would be used to store it in your Git database. The -w option then tells the command to not simply return the key, but to write that object to the database. Finally, the --stdin option tells git hash-object to get the content to be processed from stdin; otherwise, the command would expect a filename argument at the end of the command containing the content to be used. The output from the above command is a 40-character checksum hash. This is the SHA-1 hash — a checksum of the content you’re storing plus a header, which you’ll learn about in a bit. Now you can see how Git has stored your data: $ find",
+              "cosine_similarity": 0.6384140253067017
+            },
+            {
+              "page": 362,
+              "text": "post- checkout and post-merge hooks. After you run a successful git checkout, the post-checkout hook runs; you can use it to set up your working directory properly for your project environment. This may mean moving in large binary files that you don’t want source controlled, auto-generating documentation, or something along those lines. The post-merge hook runs after a successful merge command. You can use it to restore data in the working tree that Git can’t track, such as permissions data. This hook can likewise validate the presence of files external to Git control that you may want copied in when the working tree changes. The pre-push hook runs during git push, after the remote refs have been updated but before any objects have been transferred. It receives the name and location of the remote as parameters, and a list of to-be-updated refs through stdin. You can use it to validate a set of",
+              "cosine_similarity": 0.6273844242095947
+            }
+          ]
+        },
+        {
+          "question": "What are the three main states that files can reside in within Git?",
+          "page": 22,
+          "passage": "Git has three main states that your files can reside in: modified, staged, and committed:",
+          "relevant_rank": 7,
+          "hit_at_5": false,
+          "top_5": [
+            {
+              "page": 453,
+              "text": "t -dir or GIT_DIR is specified but none of --work-tree, GIT_WORK_TREE or core.worktree is specified, the current working directory is regarded as the top level of your working tree. GIT_INDEX_FILE is the path to the index file (non-bare repositories only). GIT_OBJECT_DIRECTORY can be used to specify the location of the directory that usually resides at 447",
+              "cosine_similarity": 0.5622297525405884
+            },
+            {
+              "page": 420,
+              "text": "and custom scripts. When you run git init in a new or existing directory, Git creates the .git directory, which is where almost everything that Git stores and manipulates is located. If you want to back up or clone your repository, copying this single directory elsewhere gives you nearly everything you need. This entire chapter basically deals with what you can see in this directory. Here’s what a newly- initialized .git directory typically looks like: $ ls -F1 config description HEAD 414",
+              "cosine_similarity": 0.5493369102478027
+            },
+            {
+              "page": 23,
+              "text": "phrase “staging area” works just as well. The Git directory is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer. The basic Git workflow goes something like this: 1. You modify files in your working tree. 2. You selectively stage just those changes you want to be part of your next commit, which adds only those changes to the staging area. 3. You do a commit, which takes the files as they are in the staging area and stores that snapshot permanently to your Git directory. If a particular version of a file is in the Git directory, it’s considered committed. If it has been 17",
+              "cosine_similarity": 0.5491909980773926
+            },
+            {
+              "page": 421,
+              "text": "the refs directory stores pointers into commit objects in that data (branches, tags, remotes and more), the HEAD file points to the branch you currently have checked out, and the index file is where Git stores your staging area information. You’ll now look at each of these sections in detail to see how Git operates. Git Objects Git is a content-addressable filesystem. Great. What does that mean? It means that at the core of Git is a simple key-value data store. What this means is that you can insert any kind of content into a Git repository, for which Git will hand you back a unique key you can use later to retrieve that content. As a demonstration, let’s look at the plumbing command git hash-object, which takes some data, stores it in your .git/objects directory (the object database), and gives you back the unique key that now refers to that data",
+              "cosine_similarity": 0.5469400882720947
+            },
+            {
+              "page": 453,
+              "text": "message, for example). If unset, EDITOR will be used. Repository Locations Git uses several environment variables to determine how it interfaces with the current repository. GIT_DIR is the location of the .git folder. If this isn’t specified, Git walks up the directory tree until it gets to ~ or /, looking for a .git directory at every step. GIT_CEILING_DIRECTORIES controls the behavior of searching for a .git directory. If you access directories that are slow to load (such as those on a tape drive, or across a slow network connection), you may want to have Git stop trying earlier than it might otherwise, especially if Git is invoked when building your shell prompt. GIT_WORK_TREE is the location of the root of the working directory for a non-bare repository. If --git -dir or GIT_DIR is specified but none of --work-tree, GI",
+              "cosine_similarity": 0.5467172265052795
+            }
+          ]
+        },
+        {
+          "question": "Which command and flag allow me to view which configuration file had the final say in setting a specific Git variable?",
+          "page": 30,
+          "passage": "$ git config --show-origin rerere.autoUpdate file:/home/johndoe/.gitconfig false",
+          "relevant_rank": 21,
+          "hit_at_5": false,
+          "top_5": [
+            {
+              "page": 342,
+              "text": "this file by passing the --global option. Finally, Git looks for configuration values in the configuration file in the Git directory ( .git/config) of whatever repository you’re currently using. These values are specific to that single repository, and represent passing the --local option to git config. If you don’t specify which level you want to work with, this is the default. Each of these “levels” (system, global, local) overwrites values in the previous level, so values in .git/config trump those in [path]/etc/gitconfig, for instance.  Git’s configuration files are plain-text, so you can also set these values by manually editing the file and inserting the correct syntax. It’s generally easier to run the git config command, though. Basic Client Configuration The configuration options recognized by Git fall into two categories:",
+              "cosine_similarity": 0.6672412157058716
+            },
+            {
+              "page": 29,
+              "text": ", it’s possible that you have an unexpected value for one of these values and you don’t know why. In cases like that, you can query Git as to the origin for that value, and it will tell you which configuration file had the final say in setting that value: 23",
+              "cosine_similarity": 0.6617412567138672
+            },
+            {
+              "page": 68,
+              "text": "start the command with a ! character. This is useful if you write your own tools that work with a Git repository. We can demonstrate by aliasing git visual to run gitk: $ git config --global alias.visual '!gitk' Summary At this point, you can do all the basic local Git operations — creating or cloning a repository, making changes, staging and committing those changes, and viewing the history of all the changes the repository has been through. Next, we’ll cover Git’s killer feature: its branching model. 62",
+              "cosine_similarity": 0.6337810158729553
+            },
+            {
+              "page": 342,
+              "text": "g command, though. Basic Client Configuration The configuration options recognized by Git fall into two categories: client-side and server-side. The majority of the options are client-side — configuring your personal working preferences. Many, many configuration options are supported, but a large fraction of them are useful only in certain edge cases; we’ll cover just the most common and useful options here. If you want to see a list of all the options your version of Git recognizes, you can run: 336",
+              "cosine_similarity": 0.6119521856307983
+            },
+            {
+              "page": 29,
+              "text": "--list command to list all the settings Git can find at that point: $ git config --list user.name=John Doe user.email=johndoe@example.com color.status=auto color.branch=auto color.interactive=auto color.diff=auto ... You may see keys more than once, because Git reads the same key from different files ([path]/etc/gitconfig and ~/.gitconfig, for example). In this case, Git uses the last value for each unique key it sees. You can also check what Git thinks a specific key’s value is by typing git config <key>: $ git config user.name John Doe  Since Git might read the same configuration variable value from more than one file, it’s possible that you have an unexpected value for one of these values and you don’",
+              "cosine_similarity": 0.6090748310089111
+            }
+          ]
+        },
+        {
+          "question": "What happens if I modify a tracked file after I have already staged it with git add, and then immediately run git commit?",
+          "page": 37,
+          "passage": "If you commit now, the version of CONTRIBUTING.md as it was when you last ran the git add command is how it will go into the commit, not the version of the file as it looks in your working directory when you run git commit.",
+          "relevant_rank": 6,
+          "hit_at_5": false,
+          "top_5": [
+            {
+              "page": 36,
+              "text": "(use \"git restore --staged <file>...\" to unstage) new file: README You can tell that it’s staged because it’s under the “Changes to be committed” heading. If you commit at this point, the version of the file at the time you ran git add is what will be in the subsequent historical snapshot. You may recall that when you ran git init earlier, you then ran git add <files> — that was to begin tracking files in your directory. The git add command takes a path name for either a file or a directory; if it’s a directory, the command adds all the files in that directory recursively. Staging Modified Files Let’s change a file that was already tracked. If you change a previously tracked file called CONTRIBUTING.md and then run your git status command again, you get something that looks like this: $ git status On branch master Your",
+              "cosine_similarity": 0.7116575241088867
+            },
+            {
+              "page": 43,
+              "text": "a option to the git commit command makes Git automatically stage every file that is already tracked before doing the commit, letting you skip the git add part: $ git status On branch master Your branch is up-to-date with 'origin/master'. Changes not staged for commit: (use \"git add <file>...\" to update what will be committed) (use \"git checkout -- <file>...\" to discard changes in working directory) modified: CONTRIBUTING.md no changes added to commit (use \"git add\" and/or \"git commit -a\") $ git commit -a -m 'Add new benchmarks' [master 83e38c7] Add new benchmarks 37",
+              "cosine_similarity": 0.6690758466720581
+            },
+            {
+              "page": 263,
+              "text": "Figure 141. Git repository with changed file in the working directory If we run git status right now, we’ll see the file in red as “Changes not staged for commit”, because that entry differs between the index and the working directory. Next we run git add on it to stage it into our index. 257",
+              "cosine_similarity": 0.6457286477088928
+            },
+            {
+              "page": 55,
+              "text": ", Git will use git restore instead of git reset for many undo operations. Let’s retrace our steps, and undo things with git restore instead of git reset. Unstaging a Staged File with git restore The next two sections demonstrate how to work with your staging area and working directory changes with git restore. The nice part is that the command you use to determine the state of those two areas also reminds you how to undo changes to them. For example, let’s say you’ve changed two files and want to commit them as two separate changes, but you accidentally type git add * and stage them both. How can you unstage one of the two? The git status command reminds you: $ git add * $ git status On branch master Changes to be committed: (use \"git restore --staged <file>...\" to unstage) modified: CONTRIBUTING.md renamed: README",
+              "cosine_similarity": 0.6273638010025024
+            },
+            {
+              "page": 42,
+              "text": "— any files you have created or modified that you haven’t run git add on since you edited them — won’t go into this commit. They will stay as modified files on your disk. In this case, let’s say that the last time you ran git status, you saw that everything was staged, so you’re ready to commit your changes. The simplest way to commit is to type git commit: $ git commit Doing so launches your editor of choice.  This is set by your shell’s EDITOR environment variable — usually vim or emacs, although you can configure it with whatever you want using the git config --global core.editor command as you saw in Getting Started. The editor displays the following text (this example is a Vim screen): # Please enter the commit message for your changes. Lines starting # with '#' will be ignored, and an empty message aborts the commit.",
+              "cosine_similarity": 0.6252855062484741
+            }
+          ]
+        },
+        {
+          "question": "How can I remove a file from Git's staging area so it stops being tracked, while still keeping the file on my hard drive?",
+          "page": 45,
+          "passage": "To do this, use the --cached option: $ git rm --cached README",
+          "relevant_rank": 3,
+          "hit_at_5": true,
+          "top_5": [
+            {
+              "page": 44,
+              "text": "\" to unstage) deleted: PROJECTS.md The next time you commit, the file will be gone and no longer tracked. If you modified the file or had already added it to the staging area, you must force the removal with the -f option. This is a safety feature to prevent accidental removal of data that hasn’t yet been recorded in a snapshot and that can’t be recovered from Git. Another useful thing you may want to do is to keep the file in your working tree but remove it from your staging area. In other words, you may want to keep the file on your hard drive but not have Git track it anymore. This is particularly useful if you forgot to add something to your .gitignore 38",
+              "cosine_similarity": 0.768547534942627
+            },
+            {
+              "page": 44,
+              "text": "1 file changed, 5 insertions(+), 0 deletions(-) Notice how you don’t have to run git add on the CONTRIBUTING.md file in this case before you commit. That’s because the -a flag includes all changed files. This is convenient, but be careful; sometimes this flag will cause you to include unwanted changes. Removing Files To remove a file from Git, you have to remove it from your tracked files (more accurately, remove it from your staging area) and then commit. The git rm command does that, and also removes the file from your working directory so you don’t see it as an untracked file the next time around. If you simply remove the file from your working directory, it shows up under the “Changes not staged for commit” (that is, unstaged) area of your git status output: $ rm PROJECTS.md $ git status On branch master Your branch is up-",
+              "cosine_similarity": 0.675755500793457
+            },
+            {
+              "page": 45,
+              "text": "file and accidentally staged it, like a large log file or a bunch of .a compiled files. To do this, use the --cached option: $ git rm --cached README You can pass files, directories, and file-glob patterns to the git rm command. That means you can do things such as: $ git rm log/\\*.log Note the backslash ( \\) in front of the *. This is necessary because Git does its own filename expansion in addition to your shell’s filename expansion. This command removes all files that have the .log extension in the log/ directory. Or, you can do something like this: $ git rm \\*~ This command removes all files whose names end with a ~. Moving Files Unlike many other VCSs, Git doesn’t explicitly track file movement. If you rename a file in Git, no metadata is stored in Git that",
+              "cosine_similarity": 0.6618404984474182
+            },
+            {
+              "page": 344,
+              "text": "sfile You can put patterns in your project’s .gitignore file to have Git not see them as untracked files or 338",
+              "cosine_similarity": 0.6140029430389404
+            },
+            {
+              "page": 240,
+              "text": "directory might be to remove cruft that has been generated by merges or external tools or to remove build artifacts in order to run a clean build. You’ll want to be pretty careful with this command, since it’s designed to remove files from your working directory that are not tracked. If you change your mind, there is often no retrieving the content of those files. A safer option is to run git stash --all to remove everything but save it in a stash. Assuming you do want to remove cruft files or clean your working directory, you can do so with git clean. To remove all the untracked files in your working directory, you can run git clean -f -d , which removes any files and also any subdirectories that become empty as a result. The -f means 'force' or “really do this,” and is required if the Git configuration variable clean.requireForce is not",
+              "cosine_similarity": 0.6128426790237427
+            }
+          ]
+        },
+        {
+          "question": "In git log --pretty=format, what is the difference between the author and the committer?",
+          "page": 49,
+          "passage": "The author is the person who originally wrote the work, whereas the committer is the person who last applied the work.",
+          "relevant_rank": 3,
+          "hit_at_5": true,
+          "top_5": [
+            {
+              "page": 49,
+              "text": "$ git log --pretty=format:\"%h - %an, %ar : %s\" ca82a6d - Scott Chacon, 6 years ago : Change version number 085bb3b - Scott Chacon, 6 years ago : Remove unnecessary test a11bef0 - Scott Chacon, 6 years ago : Initial commit Useful specifiers for git log --pretty=format lists some of the more useful specifiers that format takes. Table 1. Useful specifiers for git log --pretty=format Specifier Description of Output %H Commit hash %h Abbreviated commit hash %T Tree hash %t Abbreviated tree hash %P Parent hashes %p Abbreviated parent hashes %an Author name %ae Author email %ad Author date (format respects the --date=option) %ar Author date, relative %cn Committer name %ce Committer email %cd Committer date %cr Committer date, relative %s Subject",
+              "cosine_similarity": 0.7278745174407959
+            },
+            {
+              "page": 48,
+              "text": "removed. It also puts a summary of the information at the end. Another really useful option is --pretty. This option changes the log output to formats other than the default. A few prebuilt option values are available for you to use. The oneline value for this option prints each commit on a single line, which is useful if you’re looking at a lot of commits. In addition, the short, full, and fuller values show the output in roughly the same format but with less or more information, respectively: $ git log --pretty=oneline ca82a6dff817ec66f44342007202690a93763949 Change version number 085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7 Remove unnecessary test a11bef06a3f659402fe7563abf99",
+              "cosine_similarity": 0.6773312091827393
+            },
+            {
+              "page": 49,
+              "text": "%ce Committer email %cd Committer date %cr Committer date, relative %s Subject You may be wondering what the difference is between author and committer. The author is the person who originally wrote the work, whereas the committer is the person who last applied the work. So, if you send in a patch to a project and one of the core members applies the patch, both of you get credit — you as the author, and the core member as the committer. We’ll cover this distinction a bit more in Distributed Git. The oneline and format option values are particularly useful with another log option called --graph. This option adds a nice little ASCII graph showing your branch and merge history: $ git log --pretty=format:\"%h %s\" --graph * 2d3acf9 Ignore errors from SIGCHLD on trap * 5e3ee11 Merge branch 'master' of https://gi",
+              "cosine_similarity": 0.6527535915374756
+            },
+            {
+              "page": 454,
+              "text": "itive manner. Committing The final creation of a Git commit object is usually done by git-commit-tree, which uses these environment variables as its primary source of information, falling back to configuration values only if these aren’t present. GIT_AUTHOR_NAME is the human-readable name in the “author” field. GIT_AUTHOR_EMAIL is the email for the “author” field. GIT_AUTHOR_DATE is the timestamp used for the “author” field. GIT_COMMITTER_NAME sets the human name for the “committer” field. GIT_COMMITTER_EMAIL is the email address for the “committer” field. GIT_COMMITTER_DATE is used for the timestamp in the “committer” field. EMAIL is the fallback email address in case the user.email configuration value isn’t set. If this isn’t set, Git falls back to the system user and",
+              "cosine_similarity": 0.6311919689178467
+            },
+            {
+              "page": 48,
+              "text": "1bef06a3f659402fe7563abf99ad00de2209e6 Initial commit The most interesting option value is format, which allows you to specify your own log output format. This is especially useful when you’re generating output for machine parsing — because you specify the format explicitly, you know it won’t change with updates to Git: 42",
+              "cosine_similarity": 0.62220299243927
+            }
+          ]
+        },
+        {
+          "question": "Which git log option lets me search for commits that added or removed a specific string in the code?",
+          "page": 51,
+          "passage": "Another really helpful filter is the -S option (colloquially referred to as Git’s “pickaxe” option), which takes a string and shows only those commits that changed the number of occurrences of that string.",
+          "relevant_rank": 1,
+          "hit_at_5": true,
+          "top_5": [
+            {
+              "page": 51,
+              "text": "You can also filter the list to commits that match some search criteria. The --author option allows you to filter on a specific author, and the --grep option lets you search for keywords in the commit messages.  You can specify more than one instance of both the --author and --grep search criteria, which will limit the commit output to commits that match any of the --author patterns and any of the --grep patterns; however, adding the --all-match option further limits the output to just those commits that match all --grep patterns. Another really helpful filter is the -S option (colloquially referred to as Git’s “pickaxe” option), which takes a string and shows only those commits that changed the number of occurrences of that string. For instance, if you wanted to find the last commit that added or removed a reference to a specific function, you could call: $ git log -S function_",
+              "cosine_similarity": 0.7872625589370728
+            },
+            {
+              "page": 247,
+              "text": "that was currently checked out. Git Log Searching Perhaps you’re looking not for where a term exists, but when it existed or was introduced. The git log command has a number of powerful tools for finding specific commits by the content of their messages or even the content of the diff they introduce. If, for example, we want to find out when the ZLIB_BUF_MAX constant was originally introduced, we can use the -S option (colloquially referred to as the Git “pickaxe” option) to tell Git to show us only those commits that changed the number of occurrences of that string. 241",
+              "cosine_similarity": 0.7614132761955261
+            },
+            {
+              "page": 51,
+              "text": "those made before the specified date. --author Only show commits in which the author entry matches the specified string. --committer Only show commits in which the committer entry matches the specified string. --grep Only show commits with a commit message containing the string. -S Only show commits adding or removing code matching the string. For example, if you want to see which commits modifying test files in the Git source code history were committed by Junio Hamano in the month of October 2008 and are not merge commits, you 45",
+              "cosine_similarity": 0.6810921430587769
+            },
+            {
+              "page": 48,
+              "text": "removed. It also puts a summary of the information at the end. Another really useful option is --pretty. This option changes the log output to formats other than the default. A few prebuilt option values are available for you to use. The oneline value for this option prints each commit on a single line, which is useful if you’re looking at a lot of commits. In addition, the short, full, and fuller values show the output in roughly the same format but with less or more information, respectively: $ git log --pretty=oneline ca82a6dff817ec66f44342007202690a93763949 Change version number 085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7 Remove unnecessary test a11bef06a3f659402fe7563abf99",
+              "cosine_similarity": 0.6599438190460205
+            },
+            {
+              "page": 494,
+              "text": "One of the more interesting things we do with git show is in Manual File Re-merging to extract specific file contents of various stages during a merge conflict. git shortlog The git shortlog command is used to summarize the output of git log. It will take many of the same options that the git log command will but instead of listing out all of the commits it will present a summary of the commits grouped by author. We showed how to use it to create a nice changelog in The Shortlog. git describe The git describe command is used to take anything that resolves to a commit and produces a string that is somewhat human-readable and will not change. It’s a way to get a description of a commit that is as unambiguous as a commit SHA-1 but more understandable. We use git describe in Generating a Build Number and Preparing a Release to get a string to name our release file after. Debu",
+              "cosine_similarity": 0.6572661399841309
+            }
+          ]
+        },
+        {
+          "question": "What happens to the previous commit when I run git commit --amend?",
+          "page": 53,
+          "passage": "It’s important to understand that when you’re amending your last commit, you’re not so much fixing it as replacing it entirely with a new, improved commit that pushes the old commit out of the way and puts the new commit in its place.",
+          "relevant_rank": 1,
+          "hit_at_5": true,
+          "top_5": [
+            {
+              "page": 53,
+              "text": "$ git commit --amend You end up with a single commit — the second commit replaces the results of the first.  It’s important to understand that when you’re amending your last commit, you’re not so much fixing it as replacing it entirely with a new, improved commit that pushes the old commit out of the way and puts the new commit in its place. Effectively, it’s as if the previous commit never happened, and it won’t show up in your repository history. The obvious value to amending commits is to make minor improvements to your last commit, without cluttering your repository history with commit messages of the form, “Oops, forgot to add a file” or “Darn, fixing a typo in last commit”.  Only amend commits that are still local and have not been pushed somewhere. Amending previously pushed commits and force pushing the branch will cause problems for your collaborators. For more on what happens when you do this and how",
+              "cosine_similarity": 0.7948805093765259
+            },
+            {
+              "page": 250,
+              "text": "editor writes a new commit containing that updated commit message and makes it your new last commit. If, on the other hand, you want to change the actual content of your last commit, the process works basically the same way — first make the changes you think you forgot, stage those changes, and the subsequent git commit --amend replaces that last commit with your new, improved commit. You need to be careful with this technique because amending changes the SHA-1 of the commit. It’s like a very small rebase — don’t amend your last commit if you’ve already pushed it.  An amended commit may (or may not) need an amended commit message When you amend a commit, you have the opportunity to change both the commit message and the content of the commit. If you amend the content of the commit substantially, you should almost certainly update the commit message to reflect that amended content. On the other hand, if your amendments are suitably trivial (fixing a silly",
+              "cosine_similarity": 0.7505534887313843
+            },
+            {
+              "page": 52,
+              "text": "work if you do it wrong. One of the common undos takes place when you commit too early and possibly forget to add some files, or you mess up your commit message. If you want to redo that commit, make the additional changes you forgot, stage them, and commit again using the --amend option: $ git commit --amend This command takes your staging area and uses it for the commit. If you’ve made no changes since your last commit (for instance, you run this command immediately after your previous commit), then your snapshot will look exactly the same, and all you’ll change is your commit message. The same commit-message editor fires up, but it already contains the message of your previous commit. You can edit the message the same as always, but it overwrites your previous commit. As an example, if you commit and then realize you forgot to stage the changes in a file you wanted to add to this commit, you can",
+              "cosine_similarity": 0.7145284414291382
+            },
+            {
+              "page": 250,
+              "text": "that amended content. On the other hand, if your amendments are suitably trivial (fixing a silly typo or adding a file you forgot to stage) such that the earlier commit message is just fine, you can simply make the changes, stage them, and avoid the unnecessary editor session entirely with: $ git commit --amend --no-edit Changing Multiple Commit Messages To modify a commit that is farther back in your history, you must move to more complex tools. Git doesn’t have a modify-history tool, but you can use the rebase tool to rebase a series of commits onto the HEAD that they were originally based on instead of moving them to another one. With the interactive rebase tool, you can then stop after each commit you want to modify and change the message, add files, or do whatever you wish. You can run rebase interactively by adding the -i option to git rebase. You must indicate how far back you want to",
+              "cosine_similarity": 0.6628408432006836
+            },
+            {
+              "page": 265,
+              "text": "Figure 143. The git commit step with changed file Now git status will give us no output, because all three trees are the same again. Switching branches or cloning goes through a similar process. When you checkout a branch, it changes HEAD to point to the new branch ref, populates your index with the snapshot of that commit, then copies the contents of the index into your working directory. The Role of Reset The reset command makes more sense when viewed in this context. For the purposes of these examples, let’s say that we’ve modified file.txt again and committed it a third time. So now our history looks like this: 259",
+              "cosine_similarity": 0.6422910690307617
+            }
+          ]
+        },
+        {
+          "question": "How can I push only annotated tags to a remote repository without pushing lightweight tags?",
+          "page": 65,
+          "passage": "There is currently no option to push only lightweight tags, but if you use git push <remote> --follow-tags only annotated tags will be pushed to the remote.",
+          "relevant_rank": 1,
+          "hit_at_5": true,
+          "top_5": [
+            {
+              "page": 65,
+              "text": "v1.4-lw Now, when someone else clones or pulls from your repository, they will get all your tags as well.  git push pushes both types of tags git push <remote> --tags will push both lightweight and annotated tags. There is currently no option to push only lightweight tags, but if you use git push <remote> --follow-tags only annotated tags will be pushed to the remote. Deleting Tags To delete a tag on your local repository, you can use git tag -d <tagname>. For example, we could remove our lightweight tag above as follows: $ git tag -d v1.4-lw Deleted tag 'v1.4-lw' (was e7d5add) Note that this does not remove the tag from any remote servers. There are two common variations for deleting a tag from a remote server. The first variation is gi",
+              "cosine_similarity": 0.7421526908874512
+            },
+            {
+              "page": 65,
+              "text": "To git@github.com:schacon/simplegit.git * [new tag] v1.5 -> v1.5 If you have a lot of tags that you want to push up at once, you can also use the --tags option to the git push command. This will transfer all of your tags to the remote server that are not already there. $ git push origin --tags Counting objects: 1, done. Writing objects: 100% (1/1), 160 bytes | 0 bytes/s, done. Total 1 (delta 0), reused 0 (delta 0) To git@github.com:schacon/simplegit.git * [new tag] v1.4 -> v1.4 * [new tag] v1.4-lw -> v1.4-lw Now, when someone else clones or pulls from your repository, they",
+              "cosine_similarity": 0.644790768623352
+            },
+            {
+              "page": 63,
+              "text": "my version 1.4 commit ca82a6dff817ec66f44342007202690a93763949 Author: Scott Chacon <schacon@gee-mail.com> Date: Mon Mar 17 21:52:11 2008 -0700 Change version number That shows the tagger information, the date the commit was tagged, and the annotation message before showing the commit information. Lightweight Tags Another way to tag commits is with a lightweight tag. This is basically the commit checksum stored in a file — no other information is kept. To create a lightweight tag, don’t supply any of the -a, -s, or -m options, just provide a tag name: $ git tag v1.4-lw $ git tag v0.1 v1.3 v1.4 v1.4-lw v1.5 This time, if you run git show on the",
+              "cosine_similarity": 0.5815944671630859
+            },
+            {
+              "page": 62,
+              "text": "v1.8.5.1 v1.8.5.2 v1.8.5.3 v1.8.5.4 v1.8.5.5  Listing tag wildcards requires -l or --list option If you want just the entire list of tags, running the command git tag implicitly assumes you want a listing and provides one; the use of -l or --list in this case is optional. If, however, you’re supplying a wildcard pattern to match tag names, the use of -l or --list is mandatory. Creating Tags Git supports two types of tags: lightweight and annotated. A lightweight tag is very much like a branch that doesn’t change — it’s just a pointer to a specific commit. Annotated tags, however, are stored as full objects in the Git database. They’re checksummed; contain the tagger name, email, and date",
+              "cosine_similarity": 0.5119931101799011
+            },
+            {
+              "page": 493,
+              "text": "We see how to use it to share tags that you have made with the --tags option in Sharing Tags. In Publishing Submodule Changes we use the --recurse-submodules option to check that all of our submodules work has been published before pushing the superproject, which can be really helpful when using submodules. In Other Client Hooks we talk briefly about the pre-push hook, which is a script we can setup to run before a push completes to verify that it should be allowed to push. Finally, in Pushing Refspecs we look at pushing with a full refspec instead of the general shortcuts that are normally used. This can help you be very specific about what work you wish to share. git remote The git remote command is a management tool for your record of remote repositories. It allows you to save long URLs as short handles, such as “origin” so you don",
+              "cosine_similarity": 0.5087201595306396
+            }
+          ]
+        },
+        {
+          "question": "Why is creating a new branch in Git almost instantaneous compared to older version control systems?",
+          "page": 75,
+          "passage": "Because a branch in Git is actually a simple file that contains the 40 character SHA-1 checksum of the commit it points to, branches are cheap to create and destroy. Creating a new branch is as quick and simple as writing 41 bytes to a file (40 characters and a newline).",
+          "relevant_rank": null,
+          "hit_at_5": false,
+          "top_5": [
+            {
+              "page": 69,
+              "text": "Git Branching Nearly every VCS has some form of branching support. Branching means you diverge from the main line of development and continue to do work without messing with that main line. In many VCS tools, this is a somewhat expensive process, often requiring you to create a new copy of your source code directory, which can take a long time for large projects. Some people refer to Git’s branching model as its “killer feature,” and it certainly sets Git apart in the VCS community. Why is it so special? The way Git branches is incredibly lightweight, making branching operations nearly instantaneous, and switching back and forth between branches generally just as fast. Unlike many other VCSs, Git encourages workflows that branch and merge often, even multiple times in a day. Understanding and mastering this feature gives you a powerful and unique tool and can entirely change the way that you develop. Branches in a Nutshell To really understand the way Git does branching,",
+              "cosine_similarity": 0.7261971831321716
+            },
+            {
+              "page": 21,
+              "text": "of version control that most other systems copied from the previous generation. This makes Git more like a mini filesystem with some incredibly powerful tools built on top of it, rather than simply a VCS. We’ll explore some of the benefits you gain by thinking of your data this way when we cover Git branching in Git Branching. Nearly Every Operation Is Local Most operations in Git need only local files and resources to operate — generally no information is needed from another computer on your network. If you’re used to a CVCS where most operations have that network latency overhead, this aspect of Git will make you think that the gods of speed have blessed Git with unworldly powers. Because you have the entire history of the project right there on your local disk, most operations seem almost instantaneous. 15",
+              "cosine_similarity": 0.6949726343154907
+            },
+            {
+              "page": 75,
+              "text": "it points to, branches are cheap to create and destroy. Creating a new branch is as quick and simple as writing 41 bytes to a file (40 characters and a newline). This is in sharp contrast to the way most older VCS tools branch, which involves copying all of the project’s files into a second directory. This can take several seconds or even minutes, depending on the size of the project, whereas in Git the process is always instantaneous. Also, because we’re recording the parents when we commit, finding a proper merge base for merging is automatically done for us and is generally very easy to do. These features help encourage developers to create and use branches often. Let’s see why you should do so. 69",
+              "cosine_similarity": 0.6851558089256287
+            },
+            {
+              "page": 89,
+              "text": "Many Git developers have a workflow that embraces this approach, such as having only code that is entirely stable in their master branch — possibly only code that has been or will be released. They have another parallel branch named develop or next that they work from or use to test stability — it isn’t necessarily always stable, but whenever it gets to a stable state, it can be merged into master. It’s used to pull in topic branches (short-lived branches, like your earlier iss53 branch) when they’re ready, to make sure they pass all the tests and don’t introduce bugs. In reality, we’re talking about pointers moving up the line of commits you’re making. The stable branches are farther down the line in your commit history, and the bleeding-edge branches are farther up the history. Figure 26. A linear view of progressive-stability branching It’s generally easier to think about them as work silos, where sets of commits",
+              "cosine_similarity": 0.6284255981445312
+            },
+            {
+              "page": 69,
+              "text": "way that you develop. Branches in a Nutshell To really understand the way Git does branching, we need to take a step back and examine how Git stores its data. As you may remember from What is Git? , Git doesn’t store data as a series of changesets or differences, but instead as a series of snapshots. When you make a commit, Git stores a commit object that contains a pointer to the snapshot of the content you staged. This object also contains the author’s name and email address, the message that you typed, and pointers to the commit or commits that directly came before this commit (its parent or parents): zero parents for the initial commit, one parent for a normal commit, and multiple parents for a commit that results from a merge of two or more branches. To visualize this, let’s assume that you have a directory containing three files, and you stage them all and commit. Staging the files compute",
+              "cosine_similarity": 0.6083911061286926
+            }
+          ]
+        },
+        {
+          "question": "What command can I use to list only the branches that contain work I have not yet merged into my current branch?",
+          "page": 86,
+          "passage": "To see all the branches that contain work you haven’t yet merged in, you can run git branch --no -merged: $ git branch --no-merged",
+          "relevant_rank": 3,
+          "hit_at_5": true,
+          "top_5": [
+            {
+              "page": 85,
+              "text": "can filter this list to branches that you have or have not yet merged into the branch you’re currently on. To see which branches are already merged into the branch you’re on, you can run git branch --merged: 79",
+              "cosine_similarity": 0.8065625429153442
+            },
+            {
+              "page": 86,
+              "text": "'. If you really do want to delete the branch and lose that work, you can force it with -D, as the helpful message points out.  The options described above, --merged and --no-merged will, if not given a commit or branch name as an argument, show you what is, respectively, merged or not merged into your current branch. You can always provide an additional argument to ask about the merge state with respect to some other branch without checking that other branch out first, as in, what is not merged into the master branch? $ git checkout testing $ git branch --no-merged master topicA featureB Changing a branch name  Do not rename branches that are still in use by other collaborators. Do not rename a branch like master/main/mainline without having read the section Changing the master branch name. Suppose you have a branch that is called bad-branch-name and you want to change it to corrected- 80",
+              "cosine_similarity": 0.5670043230056763
+            },
+            {
+              "page": 86,
+              "text": "$ git branch --merged iss53 * master Because you already merged in iss53 earlier, you see it in your list. Branches on this list without the * in front of them are generally fine to delete with git branch -d; you’ve already incorporated their work into another branch, so you’re not going to lose anything. To see all the branches that contain work you haven’t yet merged in, you can run git branch --no -merged: $ git branch --no-merged testing This shows your other branch. Because it contains work that isn’t merged in yet, trying to delete it with git branch -d will fail: $ git branch -d testing error: The branch 'testing' is not fully merged. If you are sure you want to delete it, run 'git branch -D testing'. If you really do want to delete the branch and lose that work, you can force",
+              "cosine_similarity": 0.5428744554519653
+            },
+            {
+              "page": 490,
+              "text": "We mention it quickly in Basic Merge Conflicts and go into detail on how to implement your own external merge tool in External Merge and Diff Tools. git log The git log command is used to show the reachable recorded history of a project from the most recent commit snapshot backwards. By default it will only show the history of the branch you’re currently on, but can be given different or even multiple heads or branches from which to traverse. It is also often used to show differences between two or more branches at the commit level. 484",
+              "cosine_similarity": 0.5351669788360596
+            },
+            {
+              "page": 85,
+              "text": "all the time. The git branch command does more than just create and delete branches. If you run it with no arguments, you get a simple listing of your current branches: $ git branch iss53 * master testing Notice the * character that prefixes the master branch: it indicates the branch that you currently have checked out (i.e., the branch that HEAD points to). This means that if you commit at this point, the master branch will be moved forward with your new work. To see the last commit on each branch, you can run git branch -v: $ git branch -v iss53 93b412c Fix javascript issue * master 7a98805 Merge branch 'iss53' testing 782fd34 Add scott to the author list in the readme The useful --merged and --no-merged options can filter this list to branches that you have or have not yet merged into the branch you’re",
+              "cosine_similarity": 0.5338544845581055
+            }
+          ]
+        },
+        {
+          "question": "When I want to replay commits from a topic branch onto my mainline branch, skipping an intermediate topic branch it was originally branched off from, what git rebase option should I use?",
+          "page": 104,
+          "passage": "You can take the changes on client that aren’t on server (C8 and C9) and replay them on your master branch by using the --onto option of git rebase: $ git rebase --onto master server client",
+          "relevant_rank": 1,
+          "hit_at_5": true,
+          "top_5": [
+            {
+              "page": 104,
+              "text": "Figure 39. A history with a topic branch off another topic branch Suppose you decide that you want to merge your client-side changes into your mainline for a release, but you want to hold off on the server-side changes until it’s tested further. You can take the changes on client that aren’t on server (C8 and C9) and replay them on your master branch by using the --onto option of git rebase: $ git rebase --onto master server client This basically says, “Take the client branch, figure out the patches since it diverged from the server branch, and replay these patches in the client branch as if it was based directly off the master branch instead.” It’s a bit complex, but the result is pretty cool. Figure 40. Rebasing a topic branch off another topic branch Now you can fast-forward your master branch (see Fast-forwarding your master branch to include the client branch changes):",
+              "cosine_similarity": 0.7529236078262329
+            },
+            {
+              "page": 166,
+              "text": "you only have one commit on a topic branch and you’d prefer to cherry-pick it rather than run rebase. For example, suppose you have a project that looks like this: 160",
+              "cosine_similarity": 0.7305717468261719
+            },
+            {
+              "page": 295,
+              "text": "commits cluttering up your commit history. With rerere enabled, you can attempt the occasional merge, resolve the conflicts, then back out of the merge. If you do this continuously, then the final merge should be easy because rerere can just do everything for you automatically. This same tactic can be used if you want to keep a branch rebased so you don’t have to deal with the same rebasing conflicts each time you do it. Or if you want to take a branch that you merged and fixed a bunch of conflicts and then decide to rebase it instead — you likely won’t have to do all the same conflicts again. Another application of rerere is where you merge a bunch of evolving topic branches together into a testable head occasionally, as the Git project itself often does. If the tests fail, you can rewind the merges and re-do them without the topic branch that made the tests fail without having to re- resolve",
+              "cosine_similarity": 0.6862972974777222
+            },
+            {
+              "page": 103,
+              "text": "er doesn’t have to do any integration work — just a fast-forward or a clean apply. Note that the snapshot pointed to by the final commit you end up with, whether it’s the last of the rebased commits for a rebase or the final merge commit after a merge, is the same snapshot — it’s only the history that is different. Rebasing replays changes from one line of work onto another in the order they were introduced, whereas merging takes the endpoints and merges them together. More Interesting Rebases You can also have your rebase replay on something other than the rebase target branch. Take a history like A history with a topic branch off another topic branch , for example. You branched a topic branch ( server) to add some server-side functionality to your project, and made a commit. Then, you branched off that to make the client-side changes ( client) and committed a few times. Finally, you",
+              "cosine_similarity": 0.6394014358520508
+            },
+            {
+              "page": 105,
+              "text": "$ git checkout master $ git merge client Figure 41. Fast-forwarding your master branch to include the client branch changes Let’s say you decide to pull in your server branch as well. You can rebase the server branch onto the master branch without having to check it out first by running git rebase <basebranch> <topicbranch> — which checks out the topic branch (in this case, server) for you and replays it onto the base branch (master): $ git rebase master server This replays your server work on top of your master work, as shown in Rebasing your server branch on top of your master branch. Figure 42. Rebasing your server branch on top of your master branch Then, you can fast-forward the base branch (master): $ git checkout master $ git merge server You can remove the client and server branches because all the work is integrated and you don’t need",
+              "cosine_similarity": 0.6335842609405518
+            }
+          ]
+        },
+        {
+          "question": "What file must exist inside a repository directory for the Git daemon to serve it over the unauthenticated git:// protocol?",
+          "page": 115,
+          "passage": "In order for a repository to be served over the Git protocol, you must create a git-daemon-export-ok file — the daemon won’t serve a repository without that file in it",
+          "relevant_rank": 2,
+          "hit_at_5": true,
+          "top_5": [
+            {
+              "page": 123,
+              "text": "d, a script in your sysvinit system, or something else — as long as you get that command daemonized and watched somehow. Next, you have to tell Git which repositories to allow unauthenticated Git server-based access to. You can do this in each repository by creating a file named git-daemon-export-ok. $ cd /path/to/project.git $ touch git-daemon-export-ok The presence of that file tells Git that it’s OK to serve this project without authentication. Smart HTTP We now have authenticated access through SSH and unauthenticated access through git://, but there is also a protocol that can do both at the same time. Setting up Smart HTTP is basically just enabling a CGI script that is provided with Git called git-http-backend on the server. This CGI will read the path and headers sent by a",
+              "cosine_similarity": 0.6202855110168457
+            },
+            {
+              "page": 115,
+              "text": "but with absolutely no authentication or cryptography. In order for a repository to be served over the Git protocol, you must create a git-daemon-export-ok file — the daemon won’t serve a repository without that file in it — but, other than that, there is no security. Either the Git repository is available for everyone to clone, or it isn’t. This means that there is generally no pushing over this protocol. You can enable push access but, given the lack of authentication, anyone on the internet who finds your project’s URL could push to that project. Suffice it to say that this is rare. The Pros The Git protocol is often the fastest network transfer protocol available. If you’re serving a lot of traffic for a public project or serving a very large project that doesn’t require user authentication for read access, it’s likely that you’ll want to set up a Git daemon to serve your project",
+              "cosine_similarity": 0.6103619337081909
+            },
+            {
+              "page": 115,
+              "text": "support anonymous access to your Git repository. If you’re using SSH, people must have SSH access to your machine, even in a read-only capacity, which doesn’t make SSH conducive to open source projects for which people might simply want to clone your repository to examine it. If you’re using it only within your corporate network, SSH may be the only protocol you need to deal with. If you want to allow anonymous read-only access to your projects and also want to use SSH, you’ll have to set up SSH for you to push over but something else for others to fetch from. The Git Protocol Finally, we have the Git protocol. This is a special daemon that comes packaged with Git; it listens on a dedicated port (9418) that provides a service similar to the SSH protocol, but with absolutely no authentication or cryptography. In order for a repository to be served over the Gi",
+              "cosine_similarity": 0.5968179702758789
+            },
+            {
+              "page": 116,
+              "text": "project.git There are a couple of minor differences in the configuration file but, for your purpose, this is close to the same thing. It takes the Git repository by itself, without a working directory, and creates a directory specifically for it alone. 110",
+              "cosine_similarity": 0.5860073566436768
+            },
+            {
+              "page": 124,
+              "text": "ALL ScriptAlias /git/ /usr/lib/git-core/git-http-backend/ If you leave out GIT_HTTP_EXPORT_ALL environment variable, then Git will only serve to unauthenticated clients the repositories with the git-daemon-export-ok file in them, just like the Git daemon did. Finally you’ll want to tell Apache to allow requests to git-http-backend and make writes be authenticated somehow, possibly with an Auth block like this: <Files \"git-http-backend\"> AuthType Basic AuthName \"Git Access\" AuthUserFile /srv/git/.htpasswd Require expr !(%{QUERY_STRING} -strmatch '*service=git-receive-pack*' || %{REQUEST_URI} =~ m#/",
+              "cosine_similarity": 0.5783379077911377
+            }
+          ]
+        },
+        {
+          "question": "When formatting a commit message according to Git's guidelines, what tense/mood should the summary line be written in, and why?",
+          "page": 137,
+          "passage": "Write your commit message in the imperative: \"Fix bug\" and not \"Fixed bug\" or \"Fixes bug.\" This convention matches up with commit messages generated by commands like git merge and git revert.",
+          "relevant_rank": 6,
+          "hit_at_5": false,
+          "top_5": [
+            {
+              "page": 343,
+              "text": "If you set this to the path of a file on your system, Git will use that file as the default initial message when you commit. The value in creating a custom commit template is that you can use it to remind yourself (or others) of the proper format and style when creating a commit message. For instance, consider a template file at ~/.gitmessage.txt that looks like this: Subject line (try to keep under 50 characters) Multi-line description of commit, feel free to be detailed. [Ticket: X] Note how this commit template reminds the committer to keep the subject line short (for the sake of git log --oneline output), to add further detail under that, and to refer to an issue or bug tracker ticket number if one exists. To tell Git to use it as the default message that appears in your editor when you run git commit, set the commit.template configuration value: $ git con",
+              "cosine_similarity": 0.6958062648773193
+            },
+            {
+              "page": 137,
+              "text": "messages should start with a single line that’s no more than about 50 characters and that describes the changeset concisely, followed by a blank line, followed by a more detailed explanation. The Git project requires that the more detailed explanation include your motivation for the change and contrast its implementation with previous behavior — this is a good guideline to follow. Write your commit message in the imperative: \"Fix bug\" and not \"Fixed bug\" or \"Fixes bug.\" Here is a template you can follow, which we’ve lightly adapted from one originally written by Tim Pope: Capitalized, short (50 chars or less) summary More detailed explanatory text, if necessary. Wrap it to about 72 characters or so. In some contexts, the first line is treated as the subject of an email and the rest of the text as the body. The blank line separating the summary from the body is critical (unless you omit the body entirely); tools like re",
+              "cosine_similarity": 0.6504985094070435
+            },
+            {
+              "page": 48,
+              "text": "1bef06a3f659402fe7563abf99ad00de2209e6 Initial commit The most interesting option value is format, which allows you to specify your own log output format. This is especially useful when you’re generating output for machine parsing — because you specify the format explicitly, you know it won’t change with updates to Git: 42",
+              "cosine_similarity": 0.6439961194992065
+            },
+            {
+              "page": 344,
+              "text": "Subject line (try to keep under 50 characters) Multi-line description of commit, feel free to be detailed. [Ticket: X] # Please enter the commit message for your changes. Lines starting # with '#' will be ignored, and an empty message aborts the commit. # On branch master # Changes to be committed: # (use \"git reset HEAD <file>...\" to unstage) # # modified: lib/test.rb # ~ ~ \".git/COMMIT_EDITMSG\" 14L, 297C If your team has a commit-message policy, then putting a template for that policy on your system and configuring Git to use it by default can help increase the chance of that policy being followed regularly. core.pager This setting determines which pager is used when Git pages output such as log and diff. You can set it to more or to your favorite pager (by",
+              "cosine_similarity": 0.6383301019668579
+            },
+            {
+              "page": 494,
+              "text": "One of the more interesting things we do with git show is in Manual File Re-merging to extract specific file contents of various stages during a merge conflict. git shortlog The git shortlog command is used to summarize the output of git log. It will take many of the same options that the git log command will but instead of listing out all of the commits it will present a summary of the commits grouped by author. We showed how to use it to create a nice changelog in The Shortlog. git describe The git describe command is used to take anything that resolves to a commit and produces a string that is somewhat human-readable and will not change. It’s a way to get a description of a commit that is as unambiguous as a commit SHA-1 but more understandable. We use git describe in Generating a Build Number and Preparing a Release to get a string to name our release file after. Debu",
+              "cosine_similarity": 0.6289724111557007
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

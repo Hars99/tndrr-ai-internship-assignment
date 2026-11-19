@@ -1,0 +1,77 @@
+[
+  {
+    "question": "How does Git fundamentally store data differently from delta-based version control systems like Subversion or Perforce?",
+    "page": 21,
+    "passage": "Instead, Git thinks of its data more like a series of snapshots of a miniature filesystem. With Git, every time you commit, or save the state of your project, Git basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot."
+  },
+  {
+    "question": "What mechanism does Git use to checksum files and directories before storing them, and what does that checksum look like?",
+    "page": 22,
+    "passage": "The mechanism that Git uses for this checksumming is called a SHA-1 hash. This is a 40-character string composed of hexadecimal characters (0–9 and a–f) and calculated based on the contents of a file or directory structure in Git."
+  },
+  {
+    "question": "What are the three main states that files can reside in within Git?",
+    "page": 22,
+    "passage": "Git has three main states that your files can reside in: modified, staged, and committed:"
+  },
+  {
+    "question": "Which command and flag allow me to view which configuration file had the final say in setting a specific Git variable?",
+    "page": 30,
+    "passage": "$ git config --show-origin rerere.autoUpdate file:/home/johndoe/.gitconfig false"
+  },
+  {
+    "question": "What happens if I modify a tracked file after I have already staged it with git add, and then immediately run git commit?",
+    "page": 37,
+    "passage": "If you commit now, the version of CONTRIBUTING.md as it was when you last ran the git add command is how it will go into the commit, not the version of the file as it looks in your working directory when you run git commit."
+  },
+  {
+    "question": "How can I remove a file from Git's staging area so it stops being tracked, while still keeping the file on my hard drive?",
+    "page": 45,
+    "passage": "To do this, use the --cached option: $ git rm --cached README"
+  },
+  {
+    "question": "In git log --pretty=format, what is the difference between the author and the committer?",
+    "page": 49,
+    "passage": "The author is the person who originally wrote the work, whereas the committer is the person who last applied the work."
+  },
+  {
+    "question": "Which git log option lets me search for commits that added or removed a specific string in the code?",
+    "page": 51,
+    "passage": "Another really helpful filter is the -S option (colloquially referred to as Git’s “pickaxe” option), which takes a string and shows only those commits that changed the number of occurrences of that string."
+  },
+  {
+    "question": "What happens to the previous commit when I run git commit --amend?",
+    "page": 53,
+    "passage": "It’s important to understand that when you’re amending your last commit, you’re not so much fixing it as replacing it entirely with a new, improved commit that pushes the old commit out of the way and puts the new commit in its place."
+  },
+  {
+    "question": "How can I push only annotated tags to a remote repository without pushing lightweight tags?",
+    "page": 65,
+    "passage": "There is currently no option to push only lightweight tags, but if you use git push <remote> --follow-tags only annotated tags will be pushed to the remote."
+  },
+  {
+    "question": "Why is creating a new branch in Git almost instantaneous compared to older version control systems?",
+    "page": 75,
+    "passage": "Because a branch in Git is actually a simple file that contains the 40 character SHA-1 checksum of the commit it points to, branches are cheap to create and destroy. Creating a new branch is as quick and simple as writing 41 bytes to a file (40 characters and a newline)."
+  },
+  {
+    "question": "What command can I use to list only the branches that contain work I have not yet merged into my current branch?",
+    "page": 86,
+    "passage": "To see all the branches that contain work you haven’t yet merged in, you can run git branch --no -merged: $ git branch --no-merged"
+  },
+  {
+    "question": "When I want to replay commits from a topic branch onto my mainline branch, skipping an intermediate topic branch it was originally branched off from, what git rebase option should I use?",
+    "page": 104,
+    "passage": "You can take the changes on client that aren’t on server (C8 and C9) and replay them on your master branch by using the --onto option of git rebase: $ git rebase --onto master server client"
+  },
+  {
+    "question": "What file must exist inside a repository directory for the Git daemon to serve it over the unauthenticated git:// protocol?",
+    "page": 115,
+    "passage": "In order for a repository to be served over the Git protocol, you must create a git-daemon-export-ok file — the daemon won’t serve a repository without that file in it"
+  },
+  {
+    "question": "When formatting a commit message according to Git's guidelines, what tense/mood should the summary line be written in, and why?",
+    "page": 137,
+    "passage": "Write your commit message in the imperative: \"Fix bug\" and not \"Fixed bug\" or \"Fixes bug.\" This convention matches up with commit messages generated by commands like git merge and git revert."
+  }
+]

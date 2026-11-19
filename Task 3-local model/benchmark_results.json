@@ -1,0 +1,394 @@
+{
+  "run_utc": "2026-11-19T13:32:43.367818+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "options": {
+    "temperature": 0,
+    "max_output_tokens": 192,
+    "store": false,
+    "stream": false
+  },
+  "backend": "LM Studio native API with llama.cpp GGUF models",
+  "requested_context_length": 2048,
+  "gpu_index_sampled": 0,
+  "loaded_before_run": [],
+  "runs": [
+    {
+      "model_key": "qwen25-05b@fp16",
+      "model_instance": "tndrr-fp16",
+      "load_config": {
+        "context_length": 2048,
+        "eval_batch_size": 2048,
+        "physical_batch_size": 512,
+        "parallel": 4,
+        "flash_attention": true,
+        "lazy_mode": "auto",
+        "context_checkpoints": 32,
+        "reasoning_budget_message": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false,
+        "speculative_draft_model": "",
+        "speculative_draft_max_tokens": 3,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_min_continue_probability": 0,
+        "offload_kv_cache_to_gpu": true
+      },
+      "gpu_offload_requested": "max",
+      "nvidia_smi_idle_samples": [
+        {
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+          "driver": "591.91",
+          "total_mib": 4096,
+          "used_mib": 0
+        },
+        {
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+          "driver": "591.91",
+          "total_mib": 4096,
+          "used_mib": 0
+        },
+        {
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+          "driver": "591.91",
+          "total_mib": 4096,
+          "used_mib": 0
+        }
+      ],
+      "nvidia_smi_warm_samples": [
+        {
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+          "driver": "591.91",
+          "total_mib": 4096,
+          "used_mib": 1105
+        },
+        {
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+          "driver": "591.91",
+          "total_mib": 4096,
+          "used_mib": 1105
+        },
+        {
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+          "driver": "591.91",
+          "total_mib": 4096,
+          "used_mib": 1105
+        }
+      ],
+      "idle_gpu_mib": 0,
+      "warm_gpu_mib": 1105,
+      "warm_minus_idle_gpu_mib": 1105,
+      "outputs": [
+        {
+          "prompt_id": 1,
+          "prompt": "A bus leaves at 09:45 and travels for 2 hours 35 minutes. What time does it arrive? Give just the time.",
+          "quality_check": "Correct time is 12:20. The response should contain only the time.",
+          "output": "10:18",
+          "request_seconds": 0.13132430001860484,
+          "input_tokens": 61,
+          "output_tokens": 6,
+          "tokens_per_second": 85.5475901243862,
+          "time_to_first_token_seconds": 0.025525
+        },
+        {
+          "prompt_id": 2,
+          "prompt": "Write a Python function is_even(n) that tests integer parity. Return only the code.",
+          "quality_check": "Valid Python, correct for even and odd integers, correct function name, and code-only output.",
+          "output": "```python\ndef is_even(n):\n    \"\"\"\n    Check if an integer n has even parity.\n    \n    Parameters:\n    n (int): The integer to check for even parity.\n    \n    Returns:\n    bool: True if n has even parity, False otherwise.\n    \"\"\"\n    return n % 2 == 0\n\n# Test cases\nprint(is_even(4))  # Expected output: True\nprint(is_even(5))  # Expected output: False\n```",
+          "request_seconds": 1.1628891000000294,
+          "input_tokens": 47,
+          "output_tokens": 98,
+          "tokens_per_second": 87.59920384063808,
+          "time_to_first_token_seconds": 0.035431
+        },
+        {
+          "prompt_id": 3,
+          "prompt": "Return a JSON object with keys city and temperatures. The city is Guntur and the temperatures are 29, 31, and 30. Return only raw JSON.",
+          "quality_check": "Valid JSON with the requested keys, Guntur as a string, and the three numbers as an array.",
+          "output": "```json\n{\n  \"city\": \"Guntur\",\n  \"temperatures\": [29, 31, 30]\n}\n```",
+          "request_seconds": 0.44838249997701496,
+          "input_tokens": 67,
+          "output_tokens": 34,
+          "tokens_per_second": 89.25166535493766,
+          "time_to_first_token_seconds": 0.057177
+        },
+        {
+          "prompt_id": 4,
+          "prompt": "In exactly one sentence, explain why a laptop fan gets louder during a long video export.",
+          "quality_check": "Exactly one sentence linking sustained processing, heat, and the cooling fan.",
+          "output": "A laptop fan getting louder during a long video export is due to the increased heat generated as the video file size increases and the computer's processing power demands more cooling resources. This can lead to an increase in fan noise levels, making it harder for users to enjoy their videos without disturbing others.",
+          "request_seconds": 0.7164779000158887,
+          "input_tokens": 47,
+          "output_tokens": 59,
+          "tokens_per_second": 86.12867921670421,
+          "time_to_first_token_seconds": 0.022204
+        },
+        {
+          "prompt_id": 5,
+          "prompt": "Classify this message as billing, technical, or account. Reply with one label. 'I was billed twice for this month's subscription.'",
+          "quality_check": "Exactly the label billing.",
+          "output": "Account",
+          "request_seconds": 0.05718450000858866,
+          "input_tokens": 57,
+          "output_tokens": 2,
+          "tokens_per_second": 77.07129094412332,
+          "time_to_first_token_seconds": 0.022186
+        },
+        {
+          "prompt_id": 6,
+          "prompt": "Summarize in one sentence: The library will close for repairs on Monday and Tuesday. It will reopen Wednesday at 10 am. Books can be returned using the outside slot throughout the closure.",
+          "quality_check": "Preserves closure dates, reopening time, and the outside return option.",
+          "output": "The library will temporarily close from Monday to Tuesday, reopening on Wednesday at 10 am, with books available for return through the outside slots.",
+          "request_seconds": 0.37925849997554906,
+          "input_tokens": 69,
+          "output_tokens": 30,
+          "tokens_per_second": 86.66158650469916,
+          "time_to_first_token_seconds": 0.026113
+        },
+        {
+          "prompt_id": 7,
+          "prompt": "Suggest exactly three short names for a mobile app that helps people track household water usage.",
+          "quality_check": "Three distinct, short names relevant to water usage.",
+          "output": "1. Water Tracker\n2. EcoWater Monitor\n3. Smart Water Meter",
+          "request_seconds": 0.22960000002058223,
+          "input_tokens": 47,
+          "output_tokens": 17,
+          "tokens_per_second": 88.03640305266228,
+          "time_to_first_token_seconds": 0.023284
+        },
+        {
+          "prompt_id": 8,
+          "prompt": "Rewrite in a polite but direct way, under 25 words: 'You sent the wrong spreadsheet again. Fix it before lunch.'",
+          "quality_check": "Keeps the incorrect spreadsheet and deadline, stays polite, and uses fewer than 25 words.",
+          "output": "\"Please fix the spreadsheet you sent earlier before lunch.\"",
+          "request_seconds": 0.1672956999973394,
+          "input_tokens": 57,
+          "output_tokens": 12,
+          "tokens_per_second": 88.44647782003555,
+          "time_to_first_token_seconds": 0.023146
+        },
+        {
+          "prompt_id": 9,
+          "prompt": "The set A is {1, 2, 3, 5} and the set B is {2, 4, 5}. Which elements belong to exactly one of the two sets? Use ascending order.",
+          "quality_check": "The elements are 1, 3, and 4, in that order.",
+          "output": "To determine which elements belong to exactly one of the two sets \\(A\\) and \\(B\\), we need to check each element in both sets individually.\n\nFirst, let's list the elements of set \\(A\\):\n\\[ A = \\{1, 2, 3, 5\\} \\]\n\nNext, let's list the elements of set \\(B\\):\n\\[ B = \\{2, 4, 5\\} \\]\n\nNow, we will check each element in both sets:\n\n1. **Element 1**: \n   - In set \\(A\\), it is not in set \\(B\\) (since \\(1\\) is not equal to \\(2\\)).\n   - In set \\(B\\), it is in set \\(A\\) (since \\(1\\) is equal to \\(2\\)).\n\n   Therefore, element 1 belongs to exactly one of the sets.\n\n2. **Element 2**: \n   -",
+          "request_seconds": 2.2409942999947816,
+          "input_tokens": 74,
+          "output_tokens": 192,
+          "tokens_per_second": 87.01887899637619,
+          "time_to_first_token_seconds": 0.024757
+        },
+        {
+          "prompt_id": 10,
+          "prompt": "A note says the project was approved on Tuesday and will begin next month. Who approved it? If the note does not say, reply 'Not specified.'",
+          "quality_check": "Says Not specified without inventing an approver.",
+          "output": "Not specified.",
+          "request_seconds": 0.08594570000423118,
+          "input_tokens": 60,
+          "output_tokens": 4,
+          "tokens_per_second": 84.86562942008487,
+          "time_to_first_token_seconds": 0.02379
+        }
+      ],
+      "quantization": {
+        "name": "FP16",
+        "bits_per_weight": 16
+      },
+      "gguf_size_bytes": 1266425696,
+      "mean_decode_tokens_per_second": 86.06274052746475
+    },
+    {
+      "model_key": "qwen25-05b@q4_k_m",
+      "model_instance": "tndrr-q4",
+      "load_config": {
+        "context_length": 2048,
+        "eval_batch_size": 2048,
+        "physical_batch_size": 512,
+        "parallel": 4,
+        "flash_attention": true,
+        "lazy_mode": "auto",
+        "context_checkpoints": 32,
+        "reasoning_budget_message": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false,
+        "speculative_draft_model": "",
+        "speculative_draft_max_tokens": 3,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_min_continue_probability": 0,
+        "offload_kv_cache_to_gpu": true
+      },
+      "gpu_offload_requested": "max",
+      "nvidia_smi_idle_samples": [
+        {
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+          "driver": "591.91",
+          "total_mib": 4096,
+          "used_mib": 0
+        },
+        {
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+          "driver": "591.91",
+          "total_mib": 4096,
+          "used_mib": 0
+        },
+        {
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+          "driver": "591.91",
+          "total_mib": 4096,
+          "used_mib": 0
+        }
+      ],
+      "nvidia_smi_warm_samples": [
+        {
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+          "driver": "591.91",
+          "total_mib": 4096,
+          "used_mib": 519
+        },
+        {
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+          "driver": "591.91",
+          "total_mib": 4096,
+          "used_mib": 519
+        },
+        {
+          "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+          "driver": "591.91",
+          "total_mib": 4096,
+          "used_mib": 519
+        }
+      ],
+      "idle_gpu_mib": 0,
+      "warm_gpu_mib": 519,
+      "warm_minus_idle_gpu_mib": 519,
+      "outputs": [
+        {
+          "prompt_id": 1,
+          "prompt": "A bus leaves at 09:45 and travels for 2 hours 35 minutes. What time does it arrive? Give just the time.",
+          "quality_check": "Correct time is 12:20. The response should contain only the time.",
+          "output": "10:18",
+          "request_seconds": 0.09626770002068952,
+          "input_tokens": 61,
+          "output_tokens": 6,
+          "tokens_per_second": 120.67384273784815,
+          "time_to_first_token_seconds": 0.020086
+        },
+        {
+          "prompt_id": 2,
+          "prompt": "Write a Python function is_even(n) that tests integer parity. Return only the code.",
+          "quality_check": "Valid Python, correct for even and odd integers, correct function name, and code-only output.",
+          "output": "```python\ndef is_even(n):\n    \"\"\"\n    Test if an integer n has even parity.\n    \n    Parameters:\n    n (int): The integer to test for even parity.\n    \n    Returns:\n    bool: True if n has even parity, False otherwise.\n    \"\"\"\n    return n % 2 == 0\n\n# Example usage\nprint(is_even(4))  # Output: True\nprint(is_even(5))  # Output: False\n```",
+          "request_seconds": 0.6403390000050422,
+          "input_tokens": 47,
+          "output_tokens": 96,
+          "tokens_per_second": 164.1775052623211,
+          "time_to_first_token_seconds": 0.042435
+        },
+        {
+          "prompt_id": 3,
+          "prompt": "Return a JSON object with keys city and temperatures. The city is Guntur and the temperatures are 29, 31, and 30. Return only raw JSON.",
+          "quality_check": "Valid JSON with the requested keys, Guntur as a string, and the three numbers as an array.",
+          "output": "```json\n{\n  \"city\": \"Guntur\",\n  \"temperatures\": [29, 31, 30]\n}\n```",
+          "request_seconds": 0.2589878999860957,
+          "input_tokens": 67,
+          "output_tokens": 34,
+          "tokens_per_second": 166.48420670275505,
+          "time_to_first_token_seconds": 0.041070999999999996
+        },
+        {
+          "prompt_id": 4,
+          "prompt": "In exactly one sentence, explain why a laptop fan gets louder during a long video export.",
+          "quality_check": "Exactly one sentence linking sustained processing, heat, and the cooling fan.",
+          "output": "A laptop fan getting louder during a long video export is likely due to the increased heat generated as the video file size increases and the processor demands increase, leading to more frequent and intense cooling cycles. This can result in the fan becoming louder over time.",
+          "request_seconds": 0.34041780000552535,
+          "input_tokens": 47,
+          "output_tokens": 51,
+          "tokens_per_second": 164.09906332254658,
+          "time_to_first_token_seconds": 0.018106
+        },
+        {
+          "prompt_id": 5,
+          "prompt": "Classify this message as billing, technical, or account. Reply with one label. 'I was billed twice for this month's subscription.'",
+          "quality_check": "Exactly the label billing.",
+          "output": "Account",
+          "request_seconds": 0.0654668000061065,
+          "input_tokens": 57,
+          "output_tokens": 2,
+          "tokens_per_second": 35.96475454055026,
+          "time_to_first_token_seconds": 0.019443000000000002
+        },
+        {
+          "prompt_id": 6,
+          "prompt": "Summarize in one sentence: The library will close for repairs on Monday and Tuesday. It will reopen Wednesday at 10 am. Books can be returned using the outside slot throughout the closure.",
+          "quality_check": "Preserves closure dates, reopening time, and the outside return option.",
+          "output": "The library will temporarily close from Monday to Tuesday, reopening on Wednesday at 10 am with books available for return through the outside slots.",
+          "request_seconds": 0.21082350000506267,
+          "input_tokens": 69,
+          "output_tokens": 29,
+          "tokens_per_second": 163.76663254861825,
+          "time_to_first_token_seconds": 0.02052
+        },
+        {
+          "prompt_id": 7,
+          "prompt": "Suggest exactly three short names for a mobile app that helps people track household water usage.",
+          "quality_check": "Three distinct, short names relevant to water usage.",
+          "output": "1. Water Tracker\n2. EcoWatch\n3. Water Monitor",
+          "request_seconds": 0.12687079998431727,
+          "input_tokens": 47,
+          "output_tokens": 15,
+          "tokens_per_second": 153.75660329698087,
+          "time_to_first_token_seconds": 0.017625
+        },
+        {
+          "prompt_id": 8,
+          "prompt": "Rewrite in a polite but direct way, under 25 words: 'You sent the wrong spreadsheet again. Fix it before lunch.'",
+          "quality_check": "Keeps the incorrect spreadsheet and deadline, stays polite, and uses fewer than 25 words.",
+          "output": "\"Send the correct spreadsheet now or I'll fix it before lunch.\"",
+          "request_seconds": 0.1256763000274077,
+          "input_tokens": 57,
+          "output_tokens": 15,
+          "tokens_per_second": 157.91195280688495,
+          "time_to_first_token_seconds": 0.017431000000000002
+        },
+        {
+          "prompt_id": 9,
+          "prompt": "The set A is {1, 2, 3, 5} and the set B is {2, 4, 5}. Which elements belong to exactly one of the two sets? Use ascending order.",
+          "quality_check": "The elements are 1, 3, and 4, in that order.",
+          "output": "To determine which elements belong to exactly one of the two sets \\(A\\) and \\(B\\), we need to analyze each element individually.\n\nSet \\(A = \\{1, 2, 3, 5\\}\\) contains the following elements: \\(1, 2, 3, 5\\).\n\nSet \\(B = \\{2, 4, 5\\}\\) also contains the following elements: \\(2, 4, 5\\).\n\nNow, let's check each element:\n\n- The element \\(1\\) is in set \\(A\\) but not in set \\(B\\).\n- The element \\(2\\) is in both sets \\(A\\) and \\(B\\).\n- The element \\(3\\) is in both sets \\(A\\) and \\(B\\).\n- The element \\(5\\) is in both sets \\(A\\) and \\(B\\).\n\nFrom this analysis, we can see that the elements \\(1\\)",
+          "request_seconds": 1.2022399000125006,
+          "input_tokens": 74,
+          "output_tokens": 192,
+          "tokens_per_second": 165.20876419519544,
+          "time_to_first_token_seconds": 0.030334
+        },
+        {
+          "prompt_id": 10,
+          "prompt": "A note says the project was approved on Tuesday and will begin next month. Who approved it? If the note does not say, reply 'Not specified.'",
+          "quality_check": "Says Not specified without inventing an approver.",
+          "output": "Not specified.",
+          "request_seconds": 0.07113650001701899,
+          "input_tokens": 60,
+          "output_tokens": 4,
+          "tokens_per_second": 112.84983448690943,
+          "time_to_first_token_seconds": 0.022071999999999998
+        }
+      ],
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits_per_weight": 4
+      },
+      "gguf_size_bytes": 491400032,
+      "mean_decode_tokens_per_second": 140.48931599006102
+    }
+  ],
+  "throughput_prompt_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ]
+}
